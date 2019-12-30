@@ -48,6 +48,7 @@ public class PersonListViewModel {
                     }
                     self.state = State(errorMessage: nil, people: personViewModels)
                 case .failure(let error):
+                    //continue to show old people. Should really improve this so we show some sort of error + existing fetched people
                     self.state = State(errorMessage: error.localizedDescription, people: self.state.people)
                     print(error.localizedDescription)
                 }

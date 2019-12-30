@@ -13,7 +13,6 @@ extension UITabBarItem {
     public convenience init?(title: String?, systemName: String) {
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .thin)
         let image = UIImage(systemName: systemName, withConfiguration: imgConfig)
-//        let image = UIImage(named: systemName)
         self.init(title: title, image: image, selectedImage: nil)
     }
 }
