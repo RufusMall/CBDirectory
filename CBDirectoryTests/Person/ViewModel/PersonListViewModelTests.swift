@@ -107,4 +107,8 @@ class PersonListViewModelTests: XCTestCase {
         XCTAssertEqual(secondLoad.errorMessage, "Server returned an unexpected result. Please try again.")
         XCTAssertEqual(secondLoad.people.count, 50)
     }
+    
+    func test_FAILCITEST() {
+           XCTAssertEqual(true, false)
+       }
 }
