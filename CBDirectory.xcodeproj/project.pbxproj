@@ -11,6 +11,7 @@
 		AC750F6323BA5DA10006876E /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F6223BA5DA10006876E /* WebClient.swift */; };
 		AC750F7423BA68CD0006876E /* MockPersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7323BA68CD0006876E /* MockPersonService.swift */; };
 		AC750F7823BA69770006876E /* PersonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7723BA69770006876E /* PersonListViewModelTests.swift */; };
+		AC750F7A23BA8D190006876E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC750F7923BA8D190006876E /* README.md */; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
@@ -42,6 +43,7 @@
 		AC750F6C23BA66920006876E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC750F7323BA68CD0006876E /* MockPersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersonService.swift; sourceTree = "<group>"; };
 		AC750F7723BA69770006876E /* PersonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModelTests.swift; sourceTree = "<group>"; };
+		AC750F7923BA8D190006876E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		ACB236E023AEFAC400248DEC = {
 			isa = PBXGroup;
 			children = (
+				AC750F7923BA8D190006876E /* README.md */,
 				ACB236EB23AEFAC400248DEC /* CBDirectory */,
 				AC750F6923BA66910006876E /* CBDirectoryTests */,
 				ACB236EA23AEFAC400248DEC /* Products */,
@@ -302,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC750F7A23BA8D190006876E /* README.md in Resources */,
 				ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */,
 				ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */,
 			);
