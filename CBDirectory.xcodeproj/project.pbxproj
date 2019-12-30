@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AC750F4623B814E60006876E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F4523B814E60006876E /* BaseService.swift */; };
 		AC750F6323BA5DA10006876E /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F6223BA5DA10006876E /* WebClient.swift */; };
-		AC750F6B23BA66910006876E /* CBDirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F6A23BA66910006876E /* CBDirectoryTests.swift */; };
 		AC750F7423BA68CD0006876E /* MockPersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7323BA68CD0006876E /* MockPersonService.swift */; };
 		AC750F7823BA69770006876E /* PersonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7723BA69770006876E /* PersonListViewModelTests.swift */; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
@@ -40,7 +39,6 @@
 		AC750F4523B814E60006876E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		AC750F6223BA5DA10006876E /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
 		AC750F6823BA66910006876E /* CBDirectoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBDirectoryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC750F6A23BA66910006876E /* CBDirectoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBDirectoryTests.swift; sourceTree = "<group>"; };
 		AC750F6C23BA66920006876E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC750F7323BA68CD0006876E /* MockPersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersonService.swift; sourceTree = "<group>"; };
 		AC750F7723BA69770006876E /* PersonListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModelTests.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				AC750F7523BA694D0006876E /* Person */,
-				AC750F6A23BA66910006876E /* CBDirectoryTests.swift */,
 				AC750F6C23BA66920006876E /* Info.plist */,
 			);
 			path = CBDirectoryTests;
@@ -317,7 +314,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC750F6B23BA66910006876E /* CBDirectoryTests.swift in Sources */,
 				AC750F7823BA69770006876E /* PersonListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
