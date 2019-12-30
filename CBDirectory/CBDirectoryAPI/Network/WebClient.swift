@@ -8,16 +8,18 @@
 
 import Foundation
 
-class WebClient {
-    enum WebClientError: Error {
-        case webResponseCodeError
-        case serverError
+public class WebClient {
+    enum WebClientError: String, LocalizedError {
+        case webResponseCodeError = "Server returned an unexpected result. Please try again."
+        
+        public var errorDescription: String? {
+            return self.rawValue
+        }
     }
     
     public static var shared: WebClient = WebClient(session: URLSession.shared)
     
     let session: URLSession
-    
     
     init(session: URLSession) {
         self.session = session

@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol PersonServiceProtocol {
+public protocol PersonServiceProtocol {
     typealias PersonCompletion = (Result<[Person],Error>)->()
     func fetchPeople(completion:@escaping PersonCompletion)
 }
 
-class PersonService: BaseService, PersonServiceProtocol {
+public class PersonService: BaseService, PersonServiceProtocol {
     public func fetchPeople(completion: @escaping PersonCompletion) {
         super.get(route: "people", completion: completion)
     }

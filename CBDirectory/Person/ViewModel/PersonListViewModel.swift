@@ -71,7 +71,7 @@ class PersonCellViewModel {
 public class PersonListViewModel {
     public struct State {
         let title = "People"
-        var errorName: String?
+        var errorMessage: String?
         var people = [PersonCellViewModel]()
     }
     
@@ -84,13 +84,17 @@ public class PersonListViewModel {
         }
     }
     
-    init(service:PersonServiceProtocol, stateChanged:@escaping (State)->()) {
+    public init(service: PersonServiceProtocol, stateChanged:@escaping (State)->()) {
         self.stateChanged = stateChanged
         self.service = service
     }
     
     func start() {
         self.stateChanged(state)
+        fetchPeople()
+    }
+    
+    public func refresh() {
         fetchPeople()
     }
     
@@ -102,9 +106,9 @@ public class PersonListViewModel {
                     let personViewModels = people.map { (person) -> PersonCellViewModel in
                         return PersonCellViewModel(state: .init(firstName: person.firstName, lastName: person.lastName, avatar: nil), avatarURL: URL(string: person.avatar))
                     }
-                    self.state = State(errorName: nil, people: personViewModels)
+                    self.state = State(errorMessage: nil, people: personViewModels)
                 case .failure(let error):
-                    self.state = State(errorName: error.localizedDescription, people: self.state.people)
+                    self.state = State(errorMessage: error.localizedDescription, people: self.state.people)
                     print(error.localizedDescription)
                 }
             }
