@@ -7,20 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC750F4623B814E60006876E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F4523B814E60006876E /* BaseService.swift */; };
+		AC750F6323BA5DA10006876E /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F6223BA5DA10006876E /* WebClient.swift */; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
-		ACB236EF23AEFAC400248DEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EE23AEFAC400248DEC /* SceneDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
 		ACB2370323AEFB4B00248DEC /* UIView+LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2370223AEFB4B00248DEC /* UIView+LayoutExtensions.swift */; };
 		ACB2370523AEFD7900248DEC /* UIView+CanvasPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2370423AEFD7900248DEC /* UIView+CanvasPreview.swift */; };
 		ACB2370923AF017200248DEC /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2370823AF017200248DEC /* PersonListViewController.swift */; };
 		ACB2370B23AF01AC00248DEC /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2370A23AF01AC00248DEC /* RoomListViewController.swift */; };
+		ACB2370F23B2969B00248DEC /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2370E23B2969B00248DEC /* Person.swift */; };
+		ACB2371423B2983100248DEC /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2371323B2983100248DEC /* PersonListViewModel.swift */; };
+		ACB2371723B2991300248DEC /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2371623B2991300248DEC /* PersonService.swift */; };
+		ACE54B8923B2ECF40031AB39 /* UITabBarItem+SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE54B8823B2ECF40031AB39 /* UITabBarItem+SFSymbol.swift */; };
+		ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC750F4523B814E60006876E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		AC750F5D23B9B2880006876E /* CBDirectory copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CBDirectory copy-Info.plist"; path = "/Users/rufus/Documents/RufusProgrammer_dev/CBDirectory/CBDirectory copy-Info.plist"; sourceTree = "<absolute>"; };
+		AC750F6223BA5DA10006876E /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACB236EE23AEFAC400248DEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB236F823AEFAC800248DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB236FA23AEFAC800248DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -28,6 +36,11 @@
 		ACB2370423AEFD7900248DEC /* UIView+CanvasPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CanvasPreview.swift"; sourceTree = "<group>"; };
 		ACB2370823AF017200248DEC /* PersonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = "<group>"; };
 		ACB2370A23AF01AC00248DEC /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
+		ACB2370E23B2969B00248DEC /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		ACB2371323B2983100248DEC /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
+		ACB2371623B2991300248DEC /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		ACE54B8823B2ECF40031AB39 /* UITabBarItem+SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+SFSymbol.swift"; sourceTree = "<group>"; };
+		ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,11 +54,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC750F6123BA5D920006876E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AC750F6223BA5DA10006876E /* WebClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		ACB236E023AEFAC400248DEC = {
 			isa = PBXGroup;
 			children = (
 				ACB236EB23AEFAC400248DEC /* CBDirectory */,
 				ACB236EA23AEFAC400248DEC /* Products */,
+				AC750F5D23B9B2880006876E /* CBDirectory copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,15 +82,15 @@
 		ACB236EB23AEFAC400248DEC /* CBDirectory */ = {
 			isa = PBXGroup;
 			children = (
-				ACB2370C23AF06F200248DEC /* CBAPI */,
+				ACB2370C23AF06F200248DEC /* CBDirectoryAPI */,
 				ACB2370723AF014500248DEC /* Person */,
 				ACB2370623AF013500248DEC /* Rooms */,
 				ACB2370123AEFB1800248DEC /* Utils */,
 				ACB236EC23AEFAC400248DEC /* AppDelegate.swift */,
-				ACB236EE23AEFAC400248DEC /* SceneDelegate.swift */,
 				ACB236F523AEFAC800248DEC /* Assets.xcassets */,
 				ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */,
 				ACB236FA23AEFAC800248DEC /* Info.plist */,
+				ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */,
 			);
 			path = CBDirectory;
 			sourceTree = "<group>";
@@ -78,6 +100,7 @@
 			children = (
 				ACB2370223AEFB4B00248DEC /* UIView+LayoutExtensions.swift */,
 				ACB2370423AEFD7900248DEC /* UIView+CanvasPreview.swift */,
+				ACE54B8823B2ECF40031AB39 /* UITabBarItem+SFSymbol.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -93,16 +116,45 @@
 		ACB2370723AF014500248DEC /* Person */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2371223B2981600248DEC /* ViewModel */,
+				ACB2371023B296BD00248DEC /* Model */,
 				ACB2370823AF017200248DEC /* PersonListViewController.swift */,
 			);
 			path = Person;
 			sourceTree = "<group>";
 		};
-		ACB2370C23AF06F200248DEC /* CBAPI */ = {
+		ACB2370C23AF06F200248DEC /* CBDirectoryAPI */ = {
 			isa = PBXGroup;
 			children = (
+				AC750F6123BA5D920006876E /* Network */,
+				ACB2371523B2985C00248DEC /* API */,
 			);
-			path = CBAPI;
+			path = CBDirectoryAPI;
+			sourceTree = "<group>";
+		};
+		ACB2371023B296BD00248DEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2370E23B2969B00248DEC /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ACB2371223B2981600248DEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2371323B2983100248DEC /* PersonListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ACB2371523B2985C00248DEC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2371623B2991300248DEC /* PersonService.swift */,
+				AC750F4523B814E60006876E /* BaseService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +229,15 @@
 			files = (
 				ACB2370923AF017200248DEC /* PersonListViewController.swift in Sources */,
 				ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */,
+				ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */,
+				ACB2371723B2991300248DEC /* PersonService.swift in Sources */,
+				ACE54B8923B2ECF40031AB39 /* UITabBarItem+SFSymbol.swift in Sources */,
 				ACB2370323AEFB4B00248DEC /* UIView+LayoutExtensions.swift in Sources */,
+				ACB2371423B2983100248DEC /* PersonListViewModel.swift in Sources */,
 				ACB2370B23AF01AC00248DEC /* RoomListViewController.swift in Sources */,
-				ACB236EF23AEFAC400248DEC /* SceneDelegate.swift in Sources */,
+				AC750F6323BA5DA10006876E /* WebClient.swift in Sources */,
+				AC750F4623B814E60006876E /* BaseService.swift in Sources */,
+				ACB2370F23B2969B00248DEC /* Person.swift in Sources */,
 				ACB2370523AEFD7900248DEC /* UIView+CanvasPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +313,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -306,8 +365,10 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -34,4 +34,3 @@ public class ViewControllerPreviewProvider<T: UIViewController> {
         return T()
     }
 }
-
