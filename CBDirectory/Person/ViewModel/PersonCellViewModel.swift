@@ -29,7 +29,8 @@ public class PersonCellViewModel {
     }
     
     static let placeholderImage: UIImage = {
-        let image = UIImage(named: "person")
+        let imgConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .thin)
+        let image = UIImage(systemName: "person", withConfiguration: imgConfig)
         return image!
     }()
     
