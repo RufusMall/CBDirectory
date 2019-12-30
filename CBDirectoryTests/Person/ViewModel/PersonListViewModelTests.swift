@@ -43,8 +43,6 @@ class PersonListViewModelTests: XCTestCase {
         XCTAssertEqual(loadCompleteState.title, "People")
         XCTAssertEqual(loadCompleteState.errorMessage, nil)
         XCTAssertEqual(loadCompleteState.people.count, 50)
-        
-        print(viewState)
     }
     
     func test_loadPeopleFlowServerError() {
@@ -74,8 +72,6 @@ class PersonListViewModelTests: XCTestCase {
         XCTAssertEqual(loadCompleteState.title, "People")
         XCTAssertEqual(loadCompleteState.errorMessage, "Server returned an unexpected result. Please try again.")
         XCTAssertEqual(loadCompleteState.people.count, 0)
-        
-        print(viewState)
     }
     
     func test_loadPeopleFlowEnsureCurrentlyLoadedItemsNotClearedIfFutureRequestsFail() {
