@@ -9,14 +9,15 @@
 import UIKit
 
 class PersonListViewController: UIViewController {
-    var viewModel: PersonListViewModel! = nil
+    var viewModel: PersonListViewModel!
+    var personService: PersonService!
     
-    init() {
+    init(personService: PersonService) {
         super.init(nibName: nil, bundle: nil)
         self.tabBarItem = UITabBarItem(title: "people", systemName: "person")
+        self.personService = personService
         
-        let env = Environment.dev.url
-        viewModel = PersonListViewModel(service: PersonService(baseURL: env), stateChanged: { [weak self] (state) in
+        viewModel = PersonListViewModel(service: personService, stateChanged: { [weak self] (state) in
             guard let self = self else { return }
             
             self.tabBarItem = UITabBarItem(title: state.title, systemName: "person")
@@ -94,8 +95,10 @@ extension PersonListViewController: UITableViewDataSource {
 
 extension PersonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .systemBlue
+        
+        //move this out to somewhere else, coordinator?
+        let personVM = viewModel.state.people[indexPath.row]
+        let vc = PersonDetailViewController(personVM: personVM, personService: personService)
         self.splitViewController?.showDetailViewController(vc, sender: self)
     }
 }

@@ -61,7 +61,7 @@ class PersonCellViewModelTests: XCTestCase {
         
         viewModel.start()
         
-        waitForExpectations(timeout: 5.0, handler: nil)
+        waitForExpectations(timeout: 10.0, handler: nil)
         
         let initialState = viewState[0]
         assert(state: initialState, isConfiguredFor: testPerson, usingImage: PersonCellViewModel.placeholderImage)

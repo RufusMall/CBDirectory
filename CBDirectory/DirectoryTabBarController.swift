@@ -13,8 +13,11 @@ class DirectoryTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let splitViewController = UISplitViewController()
-       
-        let personNavStack = UINavigationController(rootViewController: PersonListViewController())
+        
+        let env = Environment.dev.url
+        let personService = PersonService(baseURL: env)
+        
+        let personNavStack = UINavigationController(rootViewController: PersonListViewController(personService: personService))
         let roomNavStack = UINavigationController(rootViewController: RoomListViewController())
         
         splitViewController.tabBarItem = personNavStack.topViewController?.tabBarItem

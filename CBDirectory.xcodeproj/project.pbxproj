@@ -15,6 +15,9 @@
 		AC750F7C23BA950F0006876E /* PersonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7B23BA950F0006876E /* PersonCellViewModel.swift */; };
 		AC750F7E23BA96300006876E /* PersonCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7D23BA96300006876E /* PersonCellViewModelTests.swift */; };
 		AC750F8023BAA3B10006876E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7F23BAA3B10006876E /* PersonCell.swift */; };
+		AC750F8223BABEC80006876E /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F8123BABEC80006876E /* PersonDetailsViewModel.swift */; };
+		AC750F8423BABF2F0006876E /* PersonDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F8323BABF2F0006876E /* PersonDetailsViewModelTests.swift */; };
+		AC750F8623BAC1DC0006876E /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F8523BAC1DC0006876E /* PersonDetailsViewController.swift */; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
@@ -50,6 +53,9 @@
 		AC750F7B23BA950F0006876E /* PersonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellViewModel.swift; sourceTree = "<group>"; };
 		AC750F7D23BA96300006876E /* PersonCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellViewModelTests.swift; sourceTree = "<group>"; };
 		AC750F7F23BAA3B10006876E /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
+		AC750F8123BABEC80006876E /* PersonDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModel.swift; sourceTree = "<group>"; };
+		AC750F8323BABF2F0006876E /* PersonDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		AC750F8523BAC1DC0006876E /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,13 +128,22 @@
 			children = (
 				AC750F7723BA69770006876E /* PersonListViewModelTests.swift */,
 				AC750F7D23BA96300006876E /* PersonCellViewModelTests.swift */,
+				AC750F8323BABF2F0006876E /* PersonDetailsViewModelTests.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AC750F8723BAC4B20006876E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		ACB236E023AEFAC400248DEC = {
 			isa = PBXGroup;
 			children = (
+				AC750F8723BAC4B20006876E /* Common */,
 				AC750F7923BA8D190006876E /* README.md */,
 				ACB236EB23AEFAC400248DEC /* CBDirectory */,
 				AC750F6923BA66910006876E /* CBDirectoryTests */,
@@ -186,6 +201,7 @@
 				ACB2371023B296BD00248DEC /* Model */,
 				ACB2370823AF017200248DEC /* PersonListViewController.swift */,
 				AC750F7F23BAA3B10006876E /* PersonCell.swift */,
+				AC750F8523BAC1DC0006876E /* PersonDetailsViewController.swift */,
 			);
 			path = Person;
 			sourceTree = "<group>";
@@ -213,6 +229,7 @@
 			children = (
 				ACB2371323B2983100248DEC /* PersonListViewModel.swift */,
 				AC750F7B23BA950F0006876E /* PersonCellViewModel.swift */,
+				AC750F8123BABEC80006876E /* PersonDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -328,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC750F7E23BA96300006876E /* PersonCellViewModelTests.swift in Sources */,
+				AC750F8423BABF2F0006876E /* PersonDetailsViewModelTests.swift in Sources */,
 				AC750F7823BA69770006876E /* PersonListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC750F8223BABEC80006876E /* PersonDetailsViewModel.swift in Sources */,
+				AC750F8623BAC1DC0006876E /* PersonDetailsViewController.swift in Sources */,
 				ACB2370923AF017200248DEC /* PersonListViewController.swift in Sources */,
 				ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */,
 				ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */,

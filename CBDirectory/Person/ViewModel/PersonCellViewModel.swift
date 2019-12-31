@@ -11,6 +11,7 @@ import UIKit
 
 public class PersonCellViewModel {
     public struct State {
+        public let id: String
         public let firstName: String
         public let lastName: String
         public var avatar: UIImage?
@@ -35,7 +36,7 @@ public class PersonCellViewModel {
     }()
     
     public init(person: Person) {
-        self.state = State(firstName: person.firstName, lastName: person.lastName, avatar: nil)
+        self.state = State(id: person.id, firstName: person.firstName, lastName: person.lastName, avatar: nil)
         self.avatarURL = URL(string: person.avatar)
     }
     
