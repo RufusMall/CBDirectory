@@ -11,10 +11,12 @@ import Foundation
 public class PersonDetailsViewModel {
     
     var personService: PersonServiceProtocol
+    var selectedPersonID: String
     
     public struct State {
-        public let title: String
-        public let isLoading: Bool
+        public var title: String
+        public var isLoading: Bool
+        public var errorMessage: String?
     }
     
     let stateChanged: (State)->()
@@ -28,10 +30,21 @@ public class PersonDetailsViewModel {
     public init(personService: PersonServiceProtocol, personID: String, stateChanged: @escaping (State)->()) {
         self.stateChanged = stateChanged
         self.personService = personService
+        selectedPersonID = personID
         self.state = State(title: "Loading...", isLoading: true)
     }
     
     public func start() {
         self.stateChanged(state)
+        self.personService.fetchPerson(id: selectedPersonID) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let personDetails):
+                    self.state.title = "\(personDetails.firstName)"
+                case .failure(let error):
+                    self.state.errorMessage = error.localizedDescription
+                }
+            }
+        }
     }
 }
