@@ -46,7 +46,12 @@ public class RoomListViewModel {
                     let roomCellViewModels = rooms.map { (room) -> RoomCellViewModel in
                         return RoomCellViewModel(room: room)
                     }
-                    self.state = State(errorMessage: nil, rooms: roomCellViewModels)
+                    
+                    let roomsOrderedByStatus = roomCellViewModels.sorted { (r1, r2) -> Bool in
+                        return r1.state.availabilityStatusText < r2.state.availabilityStatusText
+                    }
+                    
+                    self.state = State(errorMessage: nil, rooms: roomsOrderedByStatus)
                 case .failure(let error):
                     //continue to show old rooms. Should really improve this so we show some sort of error + existing fetched room
                     self.state = State(errorMessage: error.localizedDescription, rooms: self.state.rooms)

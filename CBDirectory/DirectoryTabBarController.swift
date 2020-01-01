@@ -16,13 +16,15 @@ class DirectoryTabBarController: UITabBarController {
         
         let env = Environment.dev.url
         let personService: PersonServiceProtocol = PersonService(baseURL: env)
+        let roomService: RoomServiceProtocol = RoomService(baseURL: env)
         
         let personNavStack = UINavigationController(rootViewController: PersonListViewController(personService: personService))
-        let roomNavStack = UINavigationController(rootViewController: RoomListViewController())
+        let roomNavStack = UINavigationController(rootViewController: RoomListViewController(roomService: roomService))
         
         splitViewController.tabBarItem = personNavStack.topViewController?.tabBarItem
+        splitViewController.preferredDisplayMode = .allVisible
         splitViewController.viewControllers = [personNavStack]
-        viewControllers = [splitViewController, roomNavStack]//personNavStack, roomNavStack]
+        viewControllers = [splitViewController, roomNavStack]
     }
 }
 

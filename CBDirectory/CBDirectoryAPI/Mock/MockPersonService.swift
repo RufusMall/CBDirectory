@@ -15,8 +15,8 @@ public class MockPersonService: BaseMockService, PersonServiceProtocol {
         
         for i in 0..<50 {
             let strID = "\(i)"
-            let strFirstName = "first_\(i)"
-            let strLasName = "last_\(i)"
+            let strFirstName = "first \(i)"
+            let strLasName = "last \(i)"
             let avatarURL = "https://s3.amazonaws.com/uifaces/faces/twitter/lingeswaran/128.jpg"
             let person = Person(id: strID, createdAt:Date().description, avatar: avatarURL, jobTitle: strID, phone: strID, favouriteColor: strID, email: strID, firstName: strFirstName, lastName: strLasName)
             people.append(person)
