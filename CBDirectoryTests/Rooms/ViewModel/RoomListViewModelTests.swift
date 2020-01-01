@@ -12,7 +12,6 @@ import XCTest
 class RoomListViewModelTests: XCTestCase {
     
     func test_roomFlowSuceeded() {
-        
         var viewState = [RoomListViewModel.State]()
         
         let expectation = self.expectation()
@@ -39,7 +38,6 @@ class RoomListViewModelTests: XCTestCase {
     }
     
     func test_loadRoomFlowServerError() {
-        
         var viewState = [RoomListViewModel.State]()
         
         let expectation = self.expectation()
@@ -48,7 +46,6 @@ class RoomListViewModelTests: XCTestCase {
         let roomService = MockRoomService(forceErrorAfterNAttempts: 0)
         let viewModel = RoomListViewModel(service: roomService, stateChanged: { (state) in
             viewState.append(state)
-            
             expectation.fulfill()
         })
         

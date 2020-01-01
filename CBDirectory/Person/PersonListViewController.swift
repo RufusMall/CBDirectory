@@ -16,8 +16,6 @@ class PersonListViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.tabBarItem = UITabBarItem(title: "people", systemName: "person")
         self.personService = personService
-        
-        
     }
     
     required init?(coder: NSCoder) {

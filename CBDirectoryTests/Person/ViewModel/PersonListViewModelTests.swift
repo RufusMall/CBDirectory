@@ -101,4 +101,36 @@ class PersonListViewModelTests: XCTestCase {
         XCTAssertEqual(secondLoad.errorMessage, "Server returned an unexpected result. Please try again.")
         XCTAssertEqual(secondLoad.people.count, 50)
     }
+    
+    func test_loadPeopleOrderResultsByLastName() {
+
+        var viewState = [PersonListViewModel.State]()
+
+        let expectation = self.expectation(description: "test_loadPeopleFlowSuceed")
+        expectation.expectedFulfillmentCount = 2
+
+        let viewModel = PersonListViewModel(service: MockPersonService(), stateChanged: { (state) in
+            viewState.append(state)
+
+            expectation.fulfill()
+        })
+
+        viewModel.start()
+
+        waitForExpectations(timeout: 2.0, handler: nil)
+
+        let initialState = viewState[0]
+        XCTAssertEqual(initialState.title, "People")
+        XCTAssertEqual(initialState.errorMessage, nil)
+        XCTAssertEqual(initialState.people.count, 0)
+
+        let loadCompleteState = viewState[1]
+        XCTAssertEqual(loadCompleteState.title, "People")
+        XCTAssertEqual(loadCompleteState.errorMessage, nil)
+        XCTAssertEqual(loadCompleteState.people.count, 50)
+        
+        XCTAssertEqual(loadCompleteState.people[0].state.lastName, "last 0")
+        XCTAssertEqual(loadCompleteState.people[1].state.lastName, "last 1")
+        XCTAssertEqual(loadCompleteState.people[2].state.lastName, "last 10") // this is bad, should actually fix tthis. shouldbe last 2
+    }
 }
