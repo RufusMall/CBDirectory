@@ -15,16 +15,16 @@ The view models call into a basic service layer to retreive data items. The code
 The trello board includes other features and improvements that were not implemented.
 
 From a usuability standpoint I chose to implment the following features:
--Contacts are ordered by last name to make it easier to scan through. I had planned to implement a search feature which would match search terms against first/last name and also job title.
--Rooms are  orderered by availability (if I had more time I might have implemented an option to order by the room name, almost certainly added search)
--I made sure phone numbers and telephone numbers could be tapped on to contact people
--I build the detail page using a UITableView as it was requested this be easily extendable. The PersonDetailsPageController basicaly renders using an array of Key value pairs which means it is easy to add new entries. This also could be easily modified to support groups of  data etc.
+* Contacts are ordered by last name to make it easier to scan through. I had planned to implement a search feature which would match search terms against first/last name and also job title.
+* Rooms are  orderered by availability (if I had more time I might have implemented an option to order by the room name, almost certainly added search)
+* I made sure phone numbers and telephone numbers could be tapped on to contact people
+* I build the detail page using a UITableView as it was requested this be easily extendable. The PersonDetailsPageController basicaly renders using an array of Key value pairs which means it is easy to add new entries. This also could be easily modified to support groups of  data etc.
 
 The code could also be improved using some other design patterns and third party frameworks, in particular I had in mind using an iOC container for better dependancy management and injection, simple autolayout helpers, and a more robust network layer. A more complete list is available on the trelloboard: https://trello.com/b/QzyQA4ym/cbdirectory
 
 Accessibility:
--Supports dynamic type
--Supports Voice over (could be improved)
+* Supports dynamic type
+* Supports Voice over (could be improved)
 
 
 Built using Xcode 11.2.1 on and a macbook pro on macOS catalina. The deployment target is iOS 13.0. This was mainly so I could make use of assets from the new SFSymbols and use the SwiftUI Canvas to preview my UIkitCode. If you remote the SF Symbols and preview code it would build on 
@@ -34,8 +34,8 @@ The app also compiles on bitrise CI System: xcode 11.2.x on macOS 10.14.6 (thoug
 
 # Clydesdale Developer Challenge - iOS
 Clydesdale would like a directory app to allow staff to:
- - See all of their colleagues contact details
- - See which rooms in the office are currently occupied.
+ * See all of their colleagues contact details
+ * See which rooms in the office are currently occupied.
 
 Your task is to create this app in Xcode using Swift 5.0. It should contain list/detail pages for the people and a list page for the rooms. It should include features that you deem important to delivering the desired experience to the user.
 
