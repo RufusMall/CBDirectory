@@ -12,6 +12,22 @@ class RoomListViewController: UIViewController {
     var viewModel: RoomListViewModel!
     var roomService: RoomServiceProtocol!
     
+    let refreshControl: UIRefreshControl = {
+           let refreshControl = UIRefreshControl()
+           return refreshControl
+       }()
+    
+    fileprivate func handleErrorMessages(_ state: RoomListViewModel.State) {
+        if let errorMsg = state.errorMessage {
+            let errorLabel = UILabel()
+            errorLabel.text = errorMsg
+            errorLabel.textAlignment = .center
+            self.tableView.backgroundView = errorLabel
+        } else {
+            self.tableView.backgroundView = nil
+        }
+    }
+    
     init(roomService: RoomServiceProtocol) {
         super.init(nibName: nil, bundle: nil)
         self.tabBarItem = UITabBarItem(title: "room", systemName: "studentdesk")
@@ -22,10 +38,9 @@ class RoomListViewController: UIViewController {
             self.tableView.reloadData()
             self.title = state.title
             
-            if let errorMsg = state.errorMessage {
-                let errorLabel = UILabel()
-                errorLabel.text = errorMsg
-            }
+            self.handleErrorMessages(state)
+            
+            self.refreshControl.endRefreshing()
         })
     }
     
@@ -51,8 +66,17 @@ class RoomListViewController: UIViewController {
         view.addSubview(tableView)
         tableView.constrainPinningEdgesToSuperview()
         
+        tableView.refreshControl = refreshControl
+              tableView.rowHeight = UITableView.automaticDimension
+              refreshControl.addTarget(self, action: #selector(self.refreshControlChanged), for: .valueChanged)
+        
         viewModel.start()
     }
+    
+    @objc
+      func refreshControlChanged(sender: Any?) {
+          viewModel.refresh()
+      }
 }
 
 extension RoomListViewController: UITableViewDataSource {
