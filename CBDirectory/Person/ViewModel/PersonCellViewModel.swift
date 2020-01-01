@@ -18,10 +18,10 @@ public class PersonCellViewModel {
     }
     
     public var stateChanged: (State)->() = { _ in }
-    var fetchAvatarTask: URLSessionTask? = nil
-    var avatarURL: URL?
+    private var fetchAvatarTask: URLSessionTask? = nil
+    private var avatarURL: URL?
     
-    var state: State {
+    public var state: State {
         didSet {
             DispatchQueue.main.async {
                 self.stateChanged(self.state)

@@ -10,9 +10,9 @@ import UIKit
 
 class PersonListViewController: UIViewController {
     var viewModel: PersonListViewModel!
-    var personService: PersonService!
+    var personService: PersonServiceProtocol!
     
-    init(personService: PersonService) {
+    init(personService: PersonServiceProtocol) {
         super.init(nibName: nil, bundle: nil)
         self.tabBarItem = UITabBarItem(title: "people", systemName: "person")
         self.personService = personService
@@ -98,7 +98,7 @@ extension PersonListViewController: UITableViewDelegate {
         
         //move this out to somewhere else, coordinator?
         let personVM = viewModel.state.people[indexPath.row]
-        let vc = PersonDetailViewController(personVM: personVM, personService: personService)
+        let vc = PersonDetailsViewController(personID: personVM.state.id, personService: personService)
         self.splitViewController?.showDetailViewController(vc, sender: self)
     }
 }

@@ -15,10 +15,10 @@ public class PersonListViewModel {
         public var people = [PersonCellViewModel]()
     }
     
-    let service: PersonServiceProtocol
-    let stateChanged: (State)->()
+    private let service: PersonServiceProtocol
+    private let stateChanged: (State)->()
     
-    var state = State() {
+    public var state = State() {
         didSet {
             self.stateChanged(state)
         }
@@ -29,7 +29,7 @@ public class PersonListViewModel {
         self.service = service
     }
     
-    func start() {
+    public func start() {
         self.stateChanged(state)
         fetchPeople()
     }

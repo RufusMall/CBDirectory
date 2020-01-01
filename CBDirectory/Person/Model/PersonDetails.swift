@@ -1,14 +1,14 @@
 //
-//  Person.swift
+//  PersonDetails.swift
 //  CBDirectory
 //
-//  Created by Rufus on 24/12/2019.
-//  Copyright © 2019 Rufus. All rights reserved.
+//  Created by Rufus on 01/01/2020.
+//  Copyright © 2020 Rufus. All rights reserved.
 //
 
 import Foundation
 
-public struct Person: Decodable {
+public struct PersonDetails: Decodable {
     public let id, createdAt: String
     public let avatar: String
     public let jobTitle, phone, favouriteColor, email: String

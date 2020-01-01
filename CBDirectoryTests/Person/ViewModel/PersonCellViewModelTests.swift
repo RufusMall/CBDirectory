@@ -15,13 +15,6 @@ class PersonCellViewModelTests: XCTestCase {
     
     let testPersonValidImgURL = Person(id: "id", createdAt: "", avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/lingeswaran/128.jpg", jobTitle: "jobTitle", phone: "01698386326", favouriteColor: "color", email: "Mike@email.com", firstName: "Mike", lastName: "Anderson")
     
-    
-    override func setUp() {
-    }
-    
-    override func tearDown() {
-    }
-    
     func test_flowInvalidImageURL() {
         var viewState = [PersonCellViewModel.State]()
         

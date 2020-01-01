@@ -15,7 +15,7 @@ class DirectoryTabBarController: UITabBarController {
         let splitViewController = UISplitViewController()
         
         let env = Environment.dev.url
-        let personService = PersonService(baseURL: env)
+        let personService: PersonServiceProtocol = PersonService(baseURL: env)
         
         let personNavStack = UINavigationController(rootViewController: PersonListViewController(personService: personService))
         let roomNavStack = UINavigationController(rootViewController: RoomListViewController())
