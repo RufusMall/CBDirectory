@@ -4,8 +4,33 @@ CBDirectory
 Build State:
 [![Build Status](https://app.bitrise.io/app/78ba60ad3662f53d/status.svg?token=ub_XfGcSzjV83X_V50OB6g&branch=master)](https://app.bitrise.io/app/78ba60ad3662f53d)
 
+Trello: https://trello.com/b/QzyQA4ym/cbdirectory
 
-Progress; https://trello.com/b/QzyQA4ym/cbdirectory
+Testing on iPhone X and iPad Simulators.
+
+The general structure is an MVVM Approach. The view models uses the didset funtionality of structs to update views via an update closure. This makes the code easy to pick up for developers that are not familiar with framworks that a bit more of a learning curve such as RXSwift for example. 
+
+The view models call into a basic service layer to retreive data items. The code is written in a modular fashion, but it not split into modules. If I had more time I could have done this by using cocoa pods to build seperate frameworks for each feature. This could also do with some refactoring to allow the viewmodels to share a bit more code.
+
+The trello board includes other features and improvements that were not implemented.
+
+From a usuability standpoint I chose to implment the following features:
+-Contacts are ordered by last name to make it easier to scan through. I had planned to implement a search feature which would match search terms against first/last name and also job title.
+-Rooms are  orderered by availability (if I had more time I might have implemented an option to order by the room name, almost certainly added search)
+-I made sure phone numbers and telephone numbers could be tapped on to contact people
+-I build the detail page using a UITableView as it was requested this be easily extendable. The PersonDetailsPageController basicaly renders using an array of Key value pairs which means it is easy to add new entries. This also could be easily modified to support groups of  data etc.
+
+The code could also be improved using some other design patterns and third party frameworks, in particular I had in mind using an iOC container for better dependancy management and injection, simple autolayout helpers, and a more robust network layer. A more complete list is available on the trelloboard: https://trello.com/b/QzyQA4ym/cbdirectory
+
+Accessibility:
+-Supports dynamic type
+-Supports Voice over (could be improved)
+
+
+Built using Xcode 11.2.1 on and a macbook pro on macOS catalina. The deployment target is iOS 13.0. This was mainly so I could make use of assets from the new SFSymbols and use the SwiftUI Canvas to preview my UIkitCode. If you remote the SF Symbols and preview code it would build on 
+
+The app also compiles on bitrise CI System: xcode 11.2.x on macOS 10.14.6 (though the actual ipa artifact form this build has not been tested).
+
 
 # Clydesdale Developer Challenge - iOS
 Clydesdale would like a directory app to allow staff to:
