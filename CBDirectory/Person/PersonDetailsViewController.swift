@@ -11,6 +11,7 @@ import UIKit
 
 public class PersonDetailsViewController: UIViewController {
     var personDetailsViewModel: PersonDetailsViewModel!
+    let avatarImageSize: CGFloat = 128.0
     
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -52,6 +53,9 @@ public class PersonDetailsViewController: UIViewController {
         }
     }
     
+    var imgWidthConstraint: NSLayoutConstraint!
+    var imgHeightConstraint: NSLayoutConstraint!
+    
     public init(personID: String, personService: PersonServiceProtocol) {
         super.init(nibName: nil, bundle: nil)
         
@@ -62,6 +66,8 @@ public class PersonDetailsViewController: UIViewController {
             
             if let avatar = state.avatar {
                 self.avatarCircleImageView.image = avatar
+                self.imgWidthConstraint.constant = self.avatarImageSize
+                self.imgHeightConstraint.constant = self.avatarImageSize
                 self.layoutAvatarImageView(animated: !UIAccessibility.isReduceMotionEnabled)
             }
             
@@ -85,11 +91,15 @@ public class PersonDetailsViewController: UIViewController {
         imgViewContainer.translatesAutoresizingMaskIntoConstraints = false
         imgViewContainer.addSubview(avatarCircleImageView)
         
-        let expectedImageHeightPlusRoomForMargins: CGFloat = 128.0 + 16.0
+        let expectedImageHeightPlusRoomForMargins: CGFloat = avatarImageSize + 16.0
         imgViewContainer.heightAnchor.constraint(equalToConstant: expectedImageHeightPlusRoomForMargins).isActive = true
         imgViewContainer.centerXAnchor.constraint(equalTo: avatarCircleImageView.centerXAnchor).isActive = true
         imgViewContainer.centerYAnchor.constraint(equalTo: avatarCircleImageView.centerYAnchor).isActive = true
         
+        imgWidthConstraint = self.avatarCircleImageView.heightAnchor.constraint(equalToConstant: 0)
+        imgWidthConstraint.isActive = true
+        imgHeightConstraint =  self.avatarCircleImageView.widthAnchor.constraint(equalToConstant: 0)
+        imgHeightConstraint.isActive = true
         
         self.tableView.dataSource = self
         tableView.constrainPinningEdgesToSuperview()

@@ -46,7 +46,12 @@ public class PersonListViewModel {
                     let personViewModels = people.map { (person) -> PersonCellViewModel in
                         return PersonCellViewModel(person: person)
                     }
-                    self.state = State(errorMessage: nil, people: personViewModels)
+                    
+                    let sortedViewModels = personViewModels.sorted { (p1, p2) -> Bool in
+                        return p1.state.lastName < p2.state.lastName
+                    }
+                    
+                    self.state = State(errorMessage: nil, people: sortedViewModels)
                 case .failure(let error):
                     //continue to show old people. Should really improve this so we show some sort of error + existing fetched people
                     self.state = State(errorMessage: error.localizedDescription, people: self.state.people)
