@@ -23,9 +23,8 @@ public class PersonCellViewModel {
     
     public var state: State {
         didSet {
-            DispatchQueue.main.async {
+           
                 self.stateChanged(self.state)
-            }
         }
     }
     
@@ -38,6 +37,7 @@ public class PersonCellViewModel {
     public init(person: Person) {
         self.state = State(id: person.id, firstName: person.firstName, lastName: person.lastName, avatar: nil)
         self.avatarURL = URL(string: person.avatar)
+        stateChanged(state)
     }
     
     public func start() {
@@ -46,6 +46,7 @@ public class PersonCellViewModel {
         
         if let avatarURL = avatarURL {
             fetchAvatarTask = webClient.get(url: avatarURL, completion: { (result) in
+                 DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
                     if let image = UIImage(data: data) {
@@ -53,6 +54,7 @@ public class PersonCellViewModel {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
+                }
                 }
             })
         }

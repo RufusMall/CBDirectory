@@ -14,9 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         let tabBarController = DirectoryTabBarController()
         
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let brandColor = UIColor(red: 196.0/255.0, green: 2.0/255.0, blue: 2.0/255.0, alpha: 255.0)
+        let theme = DefaultTheme(window: window, themeColor: brandColor)
+        theme.apply()
+        
+        window.rootViewController = tabBarController
+        window.makeKeyAndVisible()
+        
+        self.window = window
+        
         return true
     }
 }

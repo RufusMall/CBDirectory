@@ -41,7 +41,6 @@ class DataDetectorCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        dataDetectionTxtView.font = titleLabel.font
         let containerStackView = UIStackView(arrangedSubviews: [titleLabel, dataDetectionTxtView])
         self.contentView.addSubview(containerStackView)
         containerStackView.axis = .vertical

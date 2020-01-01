@@ -21,6 +21,7 @@
 		ACA0513023BC35C80026C09A /* DataDetectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0512F23BC35C80026C09A /* DataDetectionCell.swift */; };
 		ACA0513223BC35E70026C09A /* PersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513123BC35E70026C09A /* PersonDetails.swift */; };
 		ACA0513423BC37110026C09A /* TestCase+ExpectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513323BC37110026C09A /* TestCase+ExpectionExtension.swift */; };
+		ACA0513923BCE4680026C09A /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513823BCE4680026C09A /* DefaultTheme.swift */; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		ACA0512F23BC35C80026C09A /* DataDetectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataDetectionCell.swift; path = CBDirectory/Person/DataDetectionCell.swift; sourceTree = SOURCE_ROOT; };
 		ACA0513123BC35E70026C09A /* PersonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetails.swift; sourceTree = "<group>"; };
 		ACA0513323BC37110026C09A /* TestCase+ExpectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestCase+ExpectionExtension.swift"; sourceTree = "<group>"; };
+		ACA0513823BCE4680026C09A /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		AC750F8723BAC4B20006876E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				ACA0513823BCE4680026C09A /* DefaultTheme.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				ACB2370923AF017200248DEC /* PersonListViewController.swift in Sources */,
 				ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */,
 				ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */,
+				ACA0513923BCE4680026C09A /* DefaultTheme.swift in Sources */,
 				ACB2371723B2991300248DEC /* PersonService.swift in Sources */,
 				ACE54B8923B2ECF40031AB39 /* UITabBarItem+SFSymbol.swift in Sources */,
 				ACA0513023BC35C80026C09A /* DataDetectionCell.swift in Sources */,

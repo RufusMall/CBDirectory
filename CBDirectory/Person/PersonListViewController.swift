@@ -17,22 +17,7 @@ class PersonListViewController: UIViewController {
         self.tabBarItem = UITabBarItem(title: "people", systemName: "person")
         self.personService = personService
         
-        viewModel = PersonListViewModel(service: personService, stateChanged: { [weak self] (state) in
-            guard let self = self else { return }
-            
-            self.tabBarItem = UITabBarItem(title: state.title, systemName: "person")
-            self.tableView.reloadData()
-            self.title = state.title
-            
-            if let errorMsg = state.errorMessage {
-                self.errorLabel.text = errorMsg
-                self.tableView.backgroundView = self.errorLabel
-            } else {
-                self.tableView.backgroundView = nil
-            }
-            
-            self.refreshControl.endRefreshing()
-        })
+        
     }
     
     required init?(coder: NSCoder) {
@@ -45,7 +30,7 @@ class PersonListViewController: UIViewController {
     }()
     
     let tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: CGRect.zero)
         tableView.allowsMultipleSelection = false
         tableView.register(PersonCell.self, forCellReuseIdentifier: PersonCell.cellID)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,8 +54,32 @@ class PersonListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.refreshControl = refreshControl
+        tableView.rowHeight = UITableView.automaticDimension
         refreshControl.addTarget(self, action: #selector(self.refreshControlChanged), for: .valueChanged)
-        viewModel.start()
+        
+        viewModel = PersonListViewModel(service: personService, stateChanged: { [weak self] (state) in
+            guard let self = self else { return }
+            
+            self.tabBarItem = UITabBarItem(title: state.title, systemName: "person")
+
+            self.tableView.reloadData()
+            self.title = state.title
+            
+            if let errorMsg = state.errorMessage {
+                self.errorLabel.text = errorMsg
+                self.tableView.backgroundView = self.errorLabel
+            } else {
+                self.tableView.backgroundView = nil
+            }
+            
+            self.refreshControl.endRefreshing()
+        })
+       viewModel.start()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         
     }
     
     @objc
@@ -88,14 +97,13 @@ extension PersonListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let personVM = viewModel.state.people[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.cellID, for: indexPath) as! PersonCell
-        cell.configure(viewModel: personVM)
+        cell.viewModel = personVM
         return cell
     }
 }
 
 extension PersonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         //move this out to somewhere else, coordinator?
         let personVM = viewModel.state.people[indexPath.row]
         let vc = PersonDetailsViewController(personID: personVM.state.id, personService: personService)
@@ -104,5 +112,8 @@ extension PersonListViewController: UITableViewDelegate {
 }
 
 import SwiftUI
-class PersonListPreview: DirectoryTabControllerPreview, PreviewProvider {
+class PersonListPreview: DirectoryTabControllerPreview {
+}
+
+class PersonListControllerPreview: DirectoryTabControllerPreview, PreviewProvider {
 }

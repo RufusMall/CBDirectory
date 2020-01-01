@@ -15,7 +15,6 @@ public class PersonDetailsViewController: UIViewController {
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.estimatedRowHeight = 60
         tableView.allowsSelection = false
         return tableView
     }()
