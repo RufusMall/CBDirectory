@@ -11,12 +11,6 @@ import XCTest
 
 class PersonListViewModelTests: XCTestCase {
 
-    override func setUp() {
-    }
-
-    override func tearDown() {
-    }
-
     func test_loadPeopleFlowSuceed() {
 
         var viewState = [PersonListViewModel.State]()
