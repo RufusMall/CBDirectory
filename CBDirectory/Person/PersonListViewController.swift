@@ -75,11 +75,6 @@ class PersonListViewController: UIViewController {
        viewModel.start()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-         
-    }
-    
     @objc
     func refreshControlChanged(sender: Any?) {
         viewModel.refresh()
