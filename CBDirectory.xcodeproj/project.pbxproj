@@ -14,10 +14,7 @@
 		AC750F7E23BA96300006876E /* PersonCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7D23BA96300006876E /* PersonCellViewModelTests.swift */; };
 		AC750F8423BABF2F0006876E /* PersonDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F8323BABF2F0006876E /* PersonDetailsViewModelTests.swift */; };
 		ACA0513423BC37110026C09A /* TestCase+ExpectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513323BC37110026C09A /* TestCase+ExpectionExtension.swift */; };
-		ACA0514123BCEC820026C09A /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514023BCEC820026C09A /* RoomListViewModel.swift */; };
-		ACA0514323BCED980026C09A /* RoomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514223BCED980026C09A /* RoomCellViewModel.swift */; };
 		ACA0514723BCEF010026C09A /* RoomListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514623BCEF010026C09A /* RoomListViewModelTests.swift */; };
-		ACA0514D23BD15F20026C09A /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514C23BD15F20026C09A /* RoomCell.swift */; };
 		ACA0515423BE9CBC0026C09A /* ViewModelViewStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */; };
 		ACA0515C23BF19280026C09A /* PeopleListViewModelFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */; };
 		ACA0517523BF329E0026C09A /* People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0517423BF329E0026C09A /* People.framework */; };
@@ -25,7 +22,8 @@
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
-		ACB2370B23AF01AC00248DEC /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB2370A23AF01AC00248DEC /* RoomListViewController.swift */; };
+		ACBBC09B23BF51DF0041761A /* Rooms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC09A23BF51DF0041761A /* Rooms.framework */; };
+		ACBBC09C23BF51DF0041761A /* Rooms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC09A23BF51DF0041761A /* Rooms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ACBBC09C23BF51DF0041761A /* Rooms.framework in Embed Frameworks */,
 				ACA0517623BF329E0026C09A /* People.framework in Embed Frameworks */,
 				AC5322D123BF3A7D008A1F82 /* Common.framework in Embed Frameworks */,
 			);
@@ -62,10 +61,7 @@
 		AC750F7D23BA96300006876E /* PersonCellViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellViewModelTests.swift; sourceTree = "<group>"; };
 		AC750F8323BABF2F0006876E /* PersonDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		ACA0513323BC37110026C09A /* TestCase+ExpectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestCase+ExpectionExtension.swift"; sourceTree = "<group>"; };
-		ACA0514023BCEC820026C09A /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
-		ACA0514223BCED980026C09A /* RoomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCellViewModel.swift; sourceTree = "<group>"; };
 		ACA0514623BCEF010026C09A /* RoomListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModelTests.swift; sourceTree = "<group>"; };
-		ACA0514C23BD15F20026C09A /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelViewStateGenerator.swift; sourceTree = "<group>"; };
 		ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModelFilterTests.swift; sourceTree = "<group>"; };
 		ACA0517423BF329E0026C09A /* People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +71,7 @@
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB236F823AEFAC800248DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB236FA23AEFAC800248DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACB2370A23AF01AC00248DEC /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
+		ACBBC09A23BF51DF0041761A /* Rooms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rooms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBBC09B23BF51DF0041761A /* Rooms.framework in Frameworks */,
 				ACA0517523BF329E0026C09A /* People.framework in Frameworks */,
 				AC5322D023BF3A7D008A1F82 /* Common.framework in Frameworks */,
 			);
@@ -130,15 +127,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		ACA0513F23BCEC700026C09A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				ACA0514023BCEC820026C09A /* RoomListViewModel.swift */,
-				ACA0514223BCED980026C09A /* RoomCellViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		ACA0514423BCEED40026C09A /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +146,7 @@
 		ACA0517323BF329E0026C09A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACBBC09A23BF51DF0041761A /* Rooms.framework */,
 				ACA0519A23BF36F30026C09A /* Common.framework */,
 				ACA0517423BF329E0026C09A /* People.framework */,
 			);
@@ -187,7 +176,6 @@
 		ACB236EB23AEFAC400248DEC /* CBDirectory */ = {
 			isa = PBXGroup;
 			children = (
-				ACB2370623AF013500248DEC /* Rooms */,
 				ACB236EC23AEFAC400248DEC /* AppDelegate.swift */,
 				ACB236F523AEFAC800248DEC /* Assets.xcassets */,
 				ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */,
@@ -195,16 +183,6 @@
 				ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */,
 			);
 			path = CBDirectory;
-			sourceTree = "<group>";
-		};
-		ACB2370623AF013500248DEC /* Rooms */ = {
-			isa = PBXGroup;
-			children = (
-				ACA0513F23BCEC700026C09A /* ViewModel */,
-				ACB2370A23AF01AC00248DEC /* RoomListViewController.swift */,
-				ACA0514C23BD15F20026C09A /* RoomCell.swift */,
-			);
-			path = Rooms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,10 +303,6 @@
 			files = (
 				ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */,
 				ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */,
-				ACA0514D23BD15F20026C09A /* RoomCell.swift in Sources */,
-				ACB2370B23AF01AC00248DEC /* RoomListViewController.swift in Sources */,
-				ACA0514123BCEC820026C09A /* RoomListViewModel.swift in Sources */,
-				ACA0514323BCED980026C09A /* RoomCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
