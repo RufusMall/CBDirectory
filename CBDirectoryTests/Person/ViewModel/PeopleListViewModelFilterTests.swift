@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import People
+import Common
 @testable import CBDirectory
 
 class PeopleListFilterTests: XCTestCase {

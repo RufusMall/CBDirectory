@@ -7,8 +7,9 @@
 //
 
 import XCTest
+import People
+import Common
 @testable import CBDirectory
-extension PersonListViewModel: ViewModelProtocol {}
 
 class PersonListViewModelTests: XCTestCase {
     

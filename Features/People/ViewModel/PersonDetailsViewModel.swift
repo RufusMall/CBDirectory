@@ -11,8 +11,8 @@ import UIKit
 import Common
 
 public struct DataItemCellViewModel {
-    let title: String
-    let content: String
+    public let title: String
+    public let content: String
 }
 
 public struct PersonDetailsViewState: CreateDefault {

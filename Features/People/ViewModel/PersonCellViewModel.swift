@@ -28,7 +28,7 @@ public class PersonCellViewModel: ViewModel<PersonCellViewState> {
     private var fetchAvatarTask: URLSessionTask? = nil
     private var avatarURL: URL?
     
-    static let placeholderImage: UIImage = {
+    internal static let placeholderImage: UIImage = {
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .thin)
         let image = UIImage(systemName: "person", withConfiguration: imgConfig)
         return image!

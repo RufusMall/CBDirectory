@@ -7,11 +7,9 @@
 //
 
 import XCTest
+import Common
+import People
 @testable import CBDirectory
-
-extension PersonDetailsViewModel: ViewModelProtocol {
-    
-}
 
 class PersonDetailsViewModelTests: XCTestCase {
     
