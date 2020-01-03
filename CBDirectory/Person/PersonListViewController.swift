@@ -22,6 +22,12 @@ class PersonListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    let searchController: UISearchController = {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.obscuresBackgroundDuringPresentation = false
+        return searchController
+    }()
+    
     let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         return refreshControl
@@ -70,9 +76,16 @@ class PersonListViewController: UIViewController {
                 self.tableView.backgroundView = nil
             }
             
+            self.searchController.searchBar.placeholder = state.searchTextPlaceholder
+            
             self.refreshControl.endRefreshing()
         })
-       viewModel.start()
+        
+        navigationItem.searchController = self.searchController
+        
+        self.searchController.searchResultsUpdater = self
+        
+        viewModel.start()
     }
     
     @objc
@@ -101,6 +114,12 @@ extension PersonListViewController: UITableViewDelegate {
         let personVM = viewModel.state.people[indexPath.row]
         let vc = PersonDetailsViewController(personID: personVM.state.id, personService: personService)
         self.splitViewController?.showDetailViewController(vc, sender: self)
+    }
+}
+
+extension PersonListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        viewModel.searchFilter = searchController.searchBar.text
     }
 }
 

@@ -16,9 +16,10 @@ public struct PersonCellViewState: CreateDefault {
     public let firstName: String
     public let lastName: String
     public var avatar: UIImage? = nil
+    public let jobTitle: String
     
     public static func `default`() -> PersonCellViewState {
-        return PersonCellViewState(id: "", firstName: "", lastName: "")
+        return PersonCellViewState(id: "", firstName: "", lastName: "", jobTitle: "")
     }
 }
 
@@ -35,7 +36,8 @@ public class PersonCellViewModel: ViewModel<PersonCellViewState> {
     public init(person: Person) {
         self.avatarURL = URL(string: person.avatar)
         super.init()
-        self.state = PersonCellViewState(id: person.id, firstName: person.firstName, lastName: person.lastName, avatar: PersonCellViewModel.placeholderImage)
+        self.state = PersonCellViewState(id: person.id, firstName: person.firstName, lastName: person.lastName,
+                                         avatar: PersonCellViewModel.placeholderImage, jobTitle: person.jobTitle)
     }
     
     override public func start() {

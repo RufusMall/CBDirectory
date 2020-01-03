@@ -33,6 +33,9 @@
 		ACA0515123BD57ED0026C09A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515023BD57ED0026C09A /* BaseViewModel.swift */; };
 		ACA0515223BD59C80026C09A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515023BD57ED0026C09A /* BaseViewModel.swift */; };
 		ACA0515423BE9CBC0026C09A /* ViewModelViewStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */; };
+		ACA0515623BEF2690026C09A /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515523BEF2690026C09A /* Searchable.swift */; };
+		ACA0515A23BEF5020026C09A /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = ACA0515923BEF5020026C09A /* people.json */; };
+		ACA0515C23BF19280026C09A /* PeopleListViewModelFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
@@ -85,6 +88,9 @@
 		ACA0514C23BD15F20026C09A /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		ACA0515023BD57ED0026C09A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelViewStateGenerator.swift; sourceTree = "<group>"; };
+		ACA0515523BEF2690026C09A /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		ACA0515923BEF5020026C09A /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModelFilterTests.swift; sourceTree = "<group>"; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		AC750F7223BA68B50006876E /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				ACA0515823BEF4EA0026C09A /* testData */,
 				AC750F7323BA68CD0006876E /* MockPersonService.swift */,
 				ACA0514823BCF0DA0026C09A /* MockRoomService.swift */,
 				ACA0514A23BCF2260026C09A /* BaseMockService.swift */,
@@ -163,6 +170,7 @@
 				AC750F7723BA69770006876E /* PersonListViewModelTests.swift */,
 				AC750F7D23BA96300006876E /* PersonCellViewModelTests.swift */,
 				AC750F8323BABF2F0006876E /* PersonDetailsViewModelTests.swift */,
+				ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 		AC750F8723BAC4B20006876E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				ACA0515723BEF26D0026C09A /* Search */,
 				ACA0513823BCE4680026C09A /* DefaultTheme.swift */,
 				ACA0515023BD57ED0026C09A /* BaseViewModel.swift */,
 			);
@@ -207,6 +216,22 @@
 				ACA0514623BCEF010026C09A /* RoomListViewModelTests.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ACA0515723BEF26D0026C09A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0515523BEF2690026C09A /* Searchable.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		ACA0515823BEF4EA0026C09A /* testData */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0515923BEF5020026C09A /* people.json */,
+			);
+			path = testData;
 			sourceTree = "<group>";
 		};
 		ACB236E023AEFAC400248DEC = {
@@ -406,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA0515A23BEF5020026C09A /* people.json in Resources */,
 				AC750F7A23BA8D190006876E /* README.md in Resources */,
 				ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */,
 				ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */,
@@ -419,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA0515C23BF19280026C09A /* PeopleListViewModelFilterTests.swift in Sources */,
 				AC750F7E23BA96300006876E /* PersonCellViewModelTests.swift in Sources */,
 				ACA0513423BC37110026C09A /* TestCase+ExpectionExtension.swift in Sources */,
 				ACA0514723BCEF010026C09A /* RoomListViewModelTests.swift in Sources */,
@@ -459,6 +486,7 @@
 				ACA0514323BCED980026C09A /* RoomCellViewModel.swift in Sources */,
 				AC750F7423BA68CD0006876E /* MockPersonService.swift in Sources */,
 				AC750F4623B814E60006876E /* BaseService.swift in Sources */,
+				ACA0515623BEF2690026C09A /* Searchable.swift in Sources */,
 				ACB2370F23B2969B00248DEC /* Person.swift in Sources */,
 				ACB2370523AEFD7900248DEC /* UIView+CanvasPreview.swift in Sources */,
 			);

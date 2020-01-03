@@ -26,7 +26,6 @@ public class ViewModel<TViewState: CreateDefault>: ViewModelProtocol {
     internal var stateChanged: ViewStateChanged?
     internal typealias ViewState = TViewState
     
-    
     init(stateChanged: ViewStateChanged? = nil) {
         self.stateChanged = stateChanged
         state = TViewState.default() as! TViewState
