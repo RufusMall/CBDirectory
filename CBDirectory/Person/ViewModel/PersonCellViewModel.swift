@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Common
 
 public struct PersonCellViewState: CreateDefault {
     public typealias ViewState = PersonCellViewState

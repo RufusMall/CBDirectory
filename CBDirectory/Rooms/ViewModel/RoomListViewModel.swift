@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Common
 
 public struct RoomListViewState: CreateDefault {
     public static func `default`() -> RoomListViewState {

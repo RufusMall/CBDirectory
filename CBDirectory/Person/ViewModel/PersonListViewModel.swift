@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Common
 
 extension PersonCellViewModel: Searchable {
-    var searchableItems: [String] {
+    public var searchableItems: [String] {
         return [state.jobTitle, state.firstName, state.lastName]
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC5322D023BF3A7D008A1F82 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0519A23BF36F30026C09A /* Common.framework */; };
+		AC5322D123BF3A7D008A1F82 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0519A23BF36F30026C09A /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC750F4623B814E60006876E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F4523B814E60006876E /* BaseService.swift */; };
 		AC750F6323BA5DA10006876E /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F6223BA5DA10006876E /* WebClient.swift */; };
 		AC750F7423BA68CD0006876E /* MockPersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7323BA68CD0006876E /* MockPersonService.swift */; };
@@ -21,7 +23,6 @@
 		ACA0513023BC35C80026C09A /* DataDetectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0512F23BC35C80026C09A /* DataDetectionCell.swift */; };
 		ACA0513223BC35E70026C09A /* PersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513123BC35E70026C09A /* PersonDetails.swift */; };
 		ACA0513423BC37110026C09A /* TestCase+ExpectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513323BC37110026C09A /* TestCase+ExpectionExtension.swift */; };
-		ACA0513923BCE4680026C09A /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513823BCE4680026C09A /* DefaultTheme.swift */; };
 		ACA0513B23BCE8640026C09A /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513A23BCE8640026C09A /* RoomService.swift */; };
 		ACA0513E23BCE9A90026C09A /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0513D23BCE9A90026C09A /* Room.swift */; };
 		ACA0514123BCEC820026C09A /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514023BCEC820026C09A /* RoomListViewModel.swift */; };
@@ -30,12 +31,11 @@
 		ACA0514923BCF0DA0026C09A /* MockRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514823BCF0DA0026C09A /* MockRoomService.swift */; };
 		ACA0514B23BCF2260026C09A /* BaseMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514A23BCF2260026C09A /* BaseMockService.swift */; };
 		ACA0514D23BD15F20026C09A /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514C23BD15F20026C09A /* RoomCell.swift */; };
-		ACA0515123BD57ED0026C09A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515023BD57ED0026C09A /* BaseViewModel.swift */; };
-		ACA0515223BD59C80026C09A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515023BD57ED0026C09A /* BaseViewModel.swift */; };
 		ACA0515423BE9CBC0026C09A /* ViewModelViewStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */; };
-		ACA0515623BEF2690026C09A /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515523BEF2690026C09A /* Searchable.swift */; };
 		ACA0515A23BEF5020026C09A /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = ACA0515923BEF5020026C09A /* people.json */; };
 		ACA0515C23BF19280026C09A /* PeopleListViewModelFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */; };
+		ACA0517523BF329E0026C09A /* People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0517423BF329E0026C09A /* People.framework */; };
+		ACA0517623BF329E0026C09A /* People.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0517423BF329E0026C09A /* People.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
@@ -60,6 +60,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ACA0517723BF329E0026C09A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ACA0517623BF329E0026C09A /* People.framework in Embed Frameworks */,
+				AC5322D123BF3A7D008A1F82 /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		AC750F4523B814E60006876E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		AC750F6223BA5DA10006876E /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
@@ -77,7 +92,6 @@
 		ACA0512F23BC35C80026C09A /* DataDetectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataDetectionCell.swift; path = CBDirectory/Person/DataDetectionCell.swift; sourceTree = SOURCE_ROOT; };
 		ACA0513123BC35E70026C09A /* PersonDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetails.swift; sourceTree = "<group>"; };
 		ACA0513323BC37110026C09A /* TestCase+ExpectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestCase+ExpectionExtension.swift"; sourceTree = "<group>"; };
-		ACA0513823BCE4680026C09A /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		ACA0513A23BCE8640026C09A /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
 		ACA0513D23BCE9A90026C09A /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		ACA0514023BCEC820026C09A /* RoomListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
@@ -86,11 +100,11 @@
 		ACA0514823BCF0DA0026C09A /* MockRoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoomService.swift; sourceTree = "<group>"; };
 		ACA0514A23BCF2260026C09A /* BaseMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMockService.swift; sourceTree = "<group>"; };
 		ACA0514C23BD15F20026C09A /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
-		ACA0515023BD57ED0026C09A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelViewStateGenerator.swift; sourceTree = "<group>"; };
-		ACA0515523BEF2690026C09A /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
 		ACA0515923BEF5020026C09A /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
 		ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModelFilterTests.swift; sourceTree = "<group>"; };
+		ACA0517423BF329E0026C09A /* People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA0519A23BF36F30026C09A /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA0517523BF329E0026C09A /* People.framework in Frameworks */,
+				AC5322D023BF3A7D008A1F82 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,16 +191,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		AC750F8723BAC4B20006876E /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				ACA0515723BEF26D0026C09A /* Search */,
-				ACA0513823BCE4680026C09A /* DefaultTheme.swift */,
-				ACA0515023BD57ED0026C09A /* BaseViewModel.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		ACA0513C23BCE99C0026C09A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,14 +224,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		ACA0515723BEF26D0026C09A /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				ACA0515523BEF2690026C09A /* Searchable.swift */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		ACA0515823BEF4EA0026C09A /* testData */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,14 +232,23 @@
 			path = testData;
 			sourceTree = "<group>";
 		};
+		ACA0517323BF329E0026C09A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0519A23BF36F30026C09A /* Common.framework */,
+				ACA0517423BF329E0026C09A /* People.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACB236E023AEFAC400248DEC = {
 			isa = PBXGroup;
 			children = (
-				AC750F8723BAC4B20006876E /* Common */,
 				AC750F7923BA8D190006876E /* README.md */,
 				ACB236EB23AEFAC400248DEC /* CBDirectory */,
 				AC750F6923BA66910006876E /* CBDirectoryTests */,
 				ACB236EA23AEFAC400248DEC /* Products */,
+				ACA0517323BF329E0026C09A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -371,6 +378,7 @@
 				ACB236E523AEFAC400248DEC /* Sources */,
 				ACB236E623AEFAC400248DEC /* Frameworks */,
 				ACB236E723AEFAC400248DEC /* Resources */,
+				ACA0517723BF329E0026C09A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -452,7 +460,6 @@
 				AC750F8423BABF2F0006876E /* PersonDetailsViewModelTests.swift in Sources */,
 				AC750F7823BA69770006876E /* PersonListViewModelTests.swift in Sources */,
 				ACA0515423BE9CBC0026C09A /* ViewModelViewStateGenerator.swift in Sources */,
-				ACA0515223BD59C80026C09A /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +472,6 @@
 				ACB2370923AF017200248DEC /* PersonListViewController.swift in Sources */,
 				ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */,
 				ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */,
-				ACA0513923BCE4680026C09A /* DefaultTheme.swift in Sources */,
 				ACA0514923BCF0DA0026C09A /* MockRoomService.swift in Sources */,
 				ACA0513B23BCE8640026C09A /* RoomService.swift in Sources */,
 				ACB2371723B2991300248DEC /* PersonService.swift in Sources */,
@@ -477,7 +483,6 @@
 				ACB2370323AEFB4B00248DEC /* UIView+LayoutExtensions.swift in Sources */,
 				ACB2371423B2983100248DEC /* PersonListViewModel.swift in Sources */,
 				ACA0514D23BD15F20026C09A /* RoomCell.swift in Sources */,
-				ACA0515123BD57ED0026C09A /* BaseViewModel.swift in Sources */,
 				ACA0514B23BCF2260026C09A /* BaseMockService.swift in Sources */,
 				ACB2370B23AF01AC00248DEC /* RoomListViewController.swift in Sources */,
 				ACA0513223BC35E70026C09A /* PersonDetails.swift in Sources */,
@@ -486,7 +491,6 @@
 				ACA0514323BCED980026C09A /* RoomCellViewModel.swift in Sources */,
 				AC750F7423BA68CD0006876E /* MockPersonService.swift in Sources */,
 				AC750F4623B814E60006876E /* BaseService.swift in Sources */,
-				ACA0515623BEF2690026C09A /* Searchable.swift in Sources */,
 				ACB2370F23B2969B00248DEC /* Person.swift in Sources */,
 				ACB2370523AEFD7900248DEC /* UIView+CanvasPreview.swift in Sources */,
 			);
