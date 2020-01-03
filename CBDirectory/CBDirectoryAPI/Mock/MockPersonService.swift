@@ -13,7 +13,8 @@ public class MockPersonService: BaseMockService, PersonServiceProtocol {
     public func fetchPeople(completion:@escaping PeopleCompletion) {
         var people = [Person]()
         
-        for i in 0..<50 {
+         for char in "abcdefghijklmnopqrstuvwxyz" {
+            let i = char
             let strID = "\(i)"
             let strFirstName = "first \(i)"
             let strLasName = "last \(i)"

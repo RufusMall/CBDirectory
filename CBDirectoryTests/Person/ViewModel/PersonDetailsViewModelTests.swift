@@ -9,6 +9,10 @@
 import XCTest
 @testable import CBDirectory
 
+extension PersonDetailsViewModel: ViewModelProtocol {
+    
+}
+
 class PersonDetailsViewModelTests: XCTestCase {
     
     let testPersonInvalidImgURL = Person(id: "id", createdAt: "", avatar: "avatarURL", jobTitle: "jobTitle", phone: "01698386326", favouriteColor: "color", email: "Mike@email.com", firstName: "Mike", lastName: "Anderson")
@@ -18,9 +22,11 @@ class PersonDetailsViewModelTests: XCTestCase {
     func test_initialState() {
         let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 3
-        let viewState = returnStateChainFromViewModel(expectation: expectation, personService: MockPersonService())
+        let viewModel = PersonDetailsViewModel(personService: MockPersonService(), personID: "2")
+        let stateTracker = ViewModelViewStateGenerator(viewModel: viewModel)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation)
         
-        let initialState = viewState[0]
+        let initialState = viewStates[0]
         
         XCTAssertEqual("Loading...", initialState.title)
         XCTAssertNil(initialState.errorMessage)
@@ -31,9 +37,13 @@ class PersonDetailsViewModelTests: XCTestCase {
     func test_personDetailsLoaded() {
         let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 3
-        let viewState = returnStateChainFromViewModel(expectation: expectation, personService: MockPersonService())
-        let personLoadedState = viewState[2]
         
+        let viewModel = PersonDetailsViewModel(personService: MockPersonService(), personID: "2")
+        
+        let stateTracker = ViewModelViewStateGenerator(viewModel: viewModel)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation)
+        
+        let personLoadedState = viewStates[2]
         let itemViewModels = personLoadedState.dataItems
         XCTAssertEqual("first_name last_name", personLoadedState.title)
         XCTAssertNil(personLoadedState.errorMessage)
@@ -48,7 +58,12 @@ class PersonDetailsViewModelTests: XCTestCase {
     func test_networkError() {
         let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 2
-        let viewState = returnStateChainFromViewModel(expectation: expectation, personService: MockPersonService(forceErrorAfterNAttempts: 0))
+        
+        let viewModel = PersonDetailsViewModel(personService: MockPersonService(forceErrorAfterNAttempts: 0), personID: "2")
+        
+        let stateTracker = ViewModelViewStateGenerator(viewModel: viewModel)
+        let viewState = stateTracker.waitForViewStateFulfilling(expectation: expectation)
+        
         let personLoadState = viewState[1]
         
         XCTAssertEqual("Load Failed", personLoadState.title)
@@ -60,20 +75,5 @@ class PersonDetailsViewModelTests: XCTestCase {
     func assert(viewModel: DataItemCellViewModel, has title: String, content: String) {
         XCTAssertEqual(viewModel.title, title)
         XCTAssertEqual(viewModel.content, content)
-    }
-    
-    private func returnStateChainFromViewModel(expectation: XCTestExpectation, personService: PersonServiceProtocol) -> [PersonDetailsViewModel.State] {
-        var viewState = [PersonDetailsViewModel.State]()
-        
-        let viewModel = PersonDetailsViewModel(personService: personService, personID: "2") { (state) in
-            viewState.append(state)
-            expectation.fulfill()
-        }
-        
-        viewModel.start()
-        
-        waitForExpectations(timeout: 10.0, handler: nil)
-        
-        return viewState
     }
 }

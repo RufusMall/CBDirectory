@@ -14,7 +14,7 @@ class PersonListViewController: UIViewController {
     
     init(personService: PersonServiceProtocol) {
         super.init(nibName: nil, bundle: nil)
-        self.tabBarItem = UITabBarItem(title: "people", systemName: "person")
+        self.tabBarItem = UITabBarItem(title: "People", systemName: "person")
         self.personService = personService
     }
     
@@ -59,7 +59,7 @@ class PersonListViewController: UIViewController {
             guard let self = self else { return }
             
             self.tabBarItem = UITabBarItem(title: state.title, systemName: "person")
-
+            
             self.tableView.reloadData()
             self.title = state.title
             

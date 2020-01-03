@@ -9,23 +9,22 @@
 import Foundation
 import UIKit
 
-public class PersonCellViewModel {
-    public struct State {
-        public let id: String
-        public let firstName: String
-        public let lastName: String
-        public var avatar: UIImage?
-    }
+public struct PersonCellViewState: CreateDefault {
+    public typealias ViewState = PersonCellViewState
     
-    public var stateChanged: (State)->() = { _ in }
+    public let id: String
+    public let firstName: String
+    public let lastName: String
+    public var avatar: UIImage? = nil
+    
+    public static func `default`() -> PersonCellViewState {
+        return PersonCellViewState(id: "", firstName: "", lastName: "")
+    }
+}
+
+public class PersonCellViewModel: ViewModel<PersonCellViewState> {
     private var fetchAvatarTask: URLSessionTask? = nil
     private var avatarURL: URL?
-    
-    public var state: State {
-        didSet {
-            self.stateChanged(self.state)
-        }
-    }
     
     static let placeholderImage: UIImage = {
         let imgConfig = UIImage.SymbolConfiguration(pointSize: 40, weight: .thin)
@@ -34,12 +33,12 @@ public class PersonCellViewModel {
     }()
     
     public init(person: Person) {
-        self.state = State(id: person.id, firstName: person.firstName, lastName: person.lastName, avatar: nil)
         self.avatarURL = URL(string: person.avatar)
-        stateChanged(state)
+        super.init()
+        self.state = PersonCellViewState(id: person.id, firstName: person.firstName, lastName: person.lastName, avatar: PersonCellViewModel.placeholderImage)
     }
     
-    public func start() {
+    override public func start() {
         let webClient = WebClient.shared
         state.avatar = PersonCellViewModel.placeholderImage
         
@@ -60,9 +59,7 @@ public class PersonCellViewModel {
     }
     
     public func viewWillBeRecycled() {
-        if let currentFetch = fetchAvatarTask {
-            currentFetch.cancel()
-        }
-        state.avatar = nil
+        fetchAvatarTask?.cancel()
+        state.avatar = PersonCellViewModel.placeholderImage
     }
 }

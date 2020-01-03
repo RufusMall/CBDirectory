@@ -8,105 +8,87 @@
 
 import XCTest
 @testable import CBDirectory
+extension PersonListViewModel: ViewModelProtocol {}
 
 class PersonListViewModelTests: XCTestCase {
 
     func test_loadPeopleFlowSuceed() {
-
-        var viewState = [PersonListViewModel.State]()
-
-        let expectation = self.expectation(description: "test_loadPeopleFlowSuceed")
+        
+        let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 2
 
-        let viewModel = PersonListViewModel(service: MockPersonService(), stateChanged: { (state) in
-            viewState.append(state)
+        let viewModel = PersonListViewModel(service: MockPersonService())
+        let stateTracker = ViewModelViewStateGenerator(viewModel: viewModel)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation)
 
-            expectation.fulfill()
-        })
-
-        viewModel.start()
-
-        waitForExpectations(timeout: 2.0, handler: nil)
-
-        let initialState = viewState[0]
+        let initialState = viewStates[0]
         XCTAssertEqual(initialState.title, "People")
         XCTAssertEqual(initialState.errorMessage, nil)
         XCTAssertEqual(initialState.people.count, 0)
 
-        let loadCompleteState = viewState[1]
+        let loadCompleteState = viewStates[1]
         XCTAssertEqual(loadCompleteState.title, "People")
         XCTAssertEqual(loadCompleteState.errorMessage, nil)
-        XCTAssertEqual(loadCompleteState.people.count, 50)
+        XCTAssertEqual(loadCompleteState.people.count, 26)
     }
 
     func test_loadPeopleFlowServerError() {
 
-        var viewState = [PersonListViewModel.State]()
-
-        let expectation = self.expectation(description: "test_loadPeopleFlowServerError")
+        let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 2
 
         let personService = MockPersonService(forceErrorAfterNAttempts: 0)
-        let viewModel = PersonListViewModel(service: personService, stateChanged: { (state) in
-            viewState.append(state)
-            
-            expectation.fulfill()
-        })
+        let viewModel = PersonListViewModel(service: personService)
+        
+        let stateTracker = ViewModelViewStateGenerator(viewModel: viewModel)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation)
 
-        viewModel.start()
-
-        waitForExpectations(timeout: 2.0, handler: nil)
-
-        let initialState = viewState[0]
+        let initialState = viewStates[0]
         XCTAssertEqual(initialState.title, "People")
         XCTAssertEqual(initialState.errorMessage, nil)
         XCTAssertEqual(initialState.people.count, 0)
 
-        let loadCompleteState = viewState[1]
+        let loadCompleteState = viewStates[1]
         XCTAssertEqual(loadCompleteState.title, "People")
         XCTAssertEqual(loadCompleteState.errorMessage, "Server returned an unexpected result. Please try again.")
         XCTAssertEqual(loadCompleteState.people.count, 0)
     }
 
     func test_loadPeopleFlowEnsureCurrentlyLoadedItemsNotClearedIfFutureRequestsFail() {
-        var viewState = [PersonListViewModel.State]()
-
-        let expectation = self.expectation(description: "refresh with error expectant")
+        
+        let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 3
       
         let personService = MockPersonService(forceErrorAfterNAttempts: 1)
-        let viewModel = PersonListViewModel(service: personService, stateChanged: { (state) in
-            viewState.append(state)
-
-            expectation.fulfill()
+        let viewModel = PersonListViewModel(service: personService)
+        
+        let stateTracker = ViewModelViewStateGenerator(viewModel: viewModel)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation, viewModelActions: {
+            viewModel.start()
+            viewModel.refresh()
         })
-
-        viewModel.start()
-        viewModel.refresh()
     
-        waitForExpectations(timeout: 10.0, handler: nil)
-
-        let initialState = viewState[0]
+        let initialState = viewStates[0]
         XCTAssertEqual(initialState.title, "People")
         XCTAssertEqual(initialState.errorMessage, nil)
         XCTAssertEqual(initialState.people.count, 0)
 
-        let firstLoad = viewState[1]
+        let firstLoad = viewStates[1]
         XCTAssertEqual(firstLoad.title, "People")
         XCTAssertEqual(firstLoad.errorMessage, nil)
-        XCTAssertEqual(firstLoad.people.count, 50)
+        XCTAssertEqual(firstLoad.people.count, 26)
 
-        let secondLoad = viewState[2]
+        let secondLoad = viewStates[2]
         XCTAssertEqual(secondLoad.title, "People")
         XCTAssertEqual(secondLoad.errorMessage, "Server returned an unexpected result. Please try again.")
-        XCTAssertEqual(secondLoad.people.count, 50)
+        XCTAssertEqual(secondLoad.people.count, 26)
     }
     
     func test_loadPeopleOrderResultsByLastName() {
 
-        var viewState = [PersonListViewModel.State]()
+        var viewState = [PersonListViewState]()
 
-        let expectation = self.expectation(description: "test_loadPeopleFlowSuceed")
+        let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 2
 
         let viewModel = PersonListViewModel(service: MockPersonService(), stateChanged: { (state) in
@@ -127,10 +109,10 @@ class PersonListViewModelTests: XCTestCase {
         let loadCompleteState = viewState[1]
         XCTAssertEqual(loadCompleteState.title, "People")
         XCTAssertEqual(loadCompleteState.errorMessage, nil)
-        XCTAssertEqual(loadCompleteState.people.count, 50)
+        XCTAssertEqual(loadCompleteState.people.count, 26)
         
-        XCTAssertEqual(loadCompleteState.people[0].state.lastName, "last 0")
-        XCTAssertEqual(loadCompleteState.people[1].state.lastName, "last 1")
-        XCTAssertEqual(loadCompleteState.people[2].state.lastName, "last 10") // this is bad, should actually fix tthis. shouldbe last 2
+        XCTAssertEqual(loadCompleteState.people[0].state.lastName, "last a")
+        XCTAssertEqual(loadCompleteState.people[1].state.lastName, "last b")
+        XCTAssertEqual(loadCompleteState.people[2].state.lastName, "last c")
     }
 }

@@ -8,29 +8,28 @@
 
 import Foundation
 
-public class RoomListViewModel {
-    public struct State {
-        public let title = "Rooms"
-        public var errorMessage: String?
-        public var rooms = [RoomCellViewModel]()
+public struct RoomListViewState: CreateDefault {
+    public static func `default`() -> RoomListViewState {
+        return RoomListViewState()
     }
     
+    public typealias ViewState = RoomListViewState
+    
+    public let title = "Rooms"
+    public var errorMessage: String?
+    public var rooms = [RoomCellViewModel]()
+}
+
+public class RoomListViewModel: ViewModel<RoomListViewState> {
     private let service: RoomServiceProtocol
-    private let stateChanged: (State)->()
     
-    public var state = State() {
-        didSet {
-            self.stateChanged(state)
-        }
-    }
-    
-    public init(service: RoomServiceProtocol, stateChanged:@escaping (State)->()) {
-        self.stateChanged = stateChanged
+    public init(service: RoomServiceProtocol, stateChanged:((RoomListViewState)->())? = nil) {
         self.service = service
+        super.init(stateChanged: stateChanged)
     }
     
-    public func start() {
-        self.stateChanged(state)
+    public override func start() {
+        super.start()
         fetchRooms()
     }
     
@@ -51,10 +50,10 @@ public class RoomListViewModel {
                         return r1.state.availabilityStatusText < r2.state.availabilityStatusText
                     }
                     
-                    self.state = State(errorMessage: nil, rooms: roomsOrderedByStatus)
+                    self.state = RoomListViewState(errorMessage: nil, rooms: roomsOrderedByStatus)
                 case .failure(let error):
                     //continue to show old rooms. Should really improve this so we show some sort of error + existing fetched room
-                    self.state = State(errorMessage: error.localizedDescription, rooms: self.state.rooms)
+                    self.state = RoomListViewState(errorMessage: error.localizedDescription, rooms: self.state.rooms)
                     print(error.localizedDescription)
                 }
             }

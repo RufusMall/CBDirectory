@@ -43,9 +43,10 @@ public class PersonDetailsViewController: UIViewController {
         }
     }
     
-    private func showFailedToLoadMessage(_ state: PersonDetailsViewModel.State) {
+    private func showFailedToLoadMessage(_ state: PersonDetailsViewState) {
         if let errorMessage = state.errorMessage {
             let errorLabel = UILabel()
+            errorLabel.textAlignment = .center
             errorLabel.text = errorMessage
             tableView.backgroundView = errorLabel
         } else {
