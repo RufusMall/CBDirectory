@@ -25,13 +25,13 @@ class PersonListViewModelTests: XCTestCase {
         XCTAssertEqual(initialState.title, "People")
         XCTAssertEqual(initialState.errorMessage, nil)
         XCTAssertEqual(initialState.people.count, 0)
-        XCTAssertEqual(initialState.searchTextPlaceholder, "Enter a name or job title to search for people")
+        XCTAssertEqual(initialState.searchTextPlaceholder, "Search using a persons name or job.")
         
         let loadCompleteState = viewStates[1]
         XCTAssertEqual(loadCompleteState.title, "People")
         XCTAssertEqual(loadCompleteState.errorMessage, nil)
         XCTAssertEqual(loadCompleteState.people.count, 26)
-        XCTAssertEqual(initialState.searchTextPlaceholder, "Enter a name or job title to search for people")
+        XCTAssertEqual(initialState.searchTextPlaceholder, "Search using a persons name or job.")
     }
     
     func test_loadPeopleFlowServerError() {
