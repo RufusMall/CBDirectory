@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC5322D023BF3A7D008A1F82 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0519A23BF36F30026C09A /* Common.framework */; };
-		AC5322D123BF3A7D008A1F82 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0519A23BF36F30026C09A /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AC750F7823BA69770006876E /* PersonListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7723BA69770006876E /* PersonListViewModelTests.swift */; };
 		AC750F7A23BA8D190006876E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC750F7923BA8D190006876E /* README.md */; };
 		AC750F7E23BA96300006876E /* PersonCellViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC750F7D23BA96300006876E /* PersonCellViewModelTests.swift */; };
@@ -17,16 +15,15 @@
 		ACA0514723BCEF010026C09A /* RoomListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514623BCEF010026C09A /* RoomListViewModelTests.swift */; };
 		ACA0515423BE9CBC0026C09A /* ViewModelViewStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */; };
 		ACA0515C23BF19280026C09A /* PeopleListViewModelFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */; };
-		ACA0517523BF329E0026C09A /* People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0517423BF329E0026C09A /* People.framework */; };
-		ACA0517623BF329E0026C09A /* People.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0517423BF329E0026C09A /* People.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
-		ACBBC09B23BF51DF0041761A /* Rooms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC09A23BF51DF0041761A /* Rooms.framework */; };
-		ACBBC09C23BF51DF0041761A /* Rooms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC09A23BF51DF0041761A /* Rooms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ACBBC0A723BF56EE0041761A /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0A623BF56EE0041761A /* Common.framework */; };
-		ACBBC0A923BF56EE0041761A /* People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0A823BF56EE0041761A /* People.framework */; };
-		ACBBC0AB23BF56EE0041761A /* Rooms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0AA23BF56EE0041761A /* Rooms.framework */; };
+		ACBBC0C223BFA57A0041761A /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0C123BFA57A0041761A /* Common.framework */; };
+		ACBBC0C323BFA57A0041761A /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0C123BFA57A0041761A /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ACBBC0C523BFA57F0041761A /* People.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0C423BFA57F0041761A /* People.framework */; };
+		ACBBC0C623BFA57F0041761A /* People.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0C423BFA57F0041761A /* People.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ACBBC0C823BFA5860041761A /* Rooms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0C723BFA5860041761A /* Rooms.framework */; };
+		ACBBC0C923BFA5860041761A /* Rooms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0C723BFA5860041761A /* Rooms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ACE54B8B23B4FDD30031AB39 /* DirectoryTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,15 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		ACA0517723BF329E0026C09A /* Embed Frameworks */ = {
+		ACBBC0B323BF5F880041761A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ACBBC09C23BF51DF0041761A /* Rooms.framework in Embed Frameworks */,
-				ACA0517623BF329E0026C09A /* People.framework in Embed Frameworks */,
-				AC5322D123BF3A7D008A1F82 /* Common.framework in Embed Frameworks */,
+				ACBBC0C923BFA5860041761A /* Rooms.framework in Embed Frameworks */,
+				ACBBC0C323BFA57A0041761A /* Common.framework in Embed Frameworks */,
+				ACBBC0C623BFA57F0041761A /* People.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,17 +64,17 @@
 		ACA0514623BCEF010026C09A /* RoomListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListViewModelTests.swift; sourceTree = "<group>"; };
 		ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelViewStateGenerator.swift; sourceTree = "<group>"; };
 		ACA0515B23BF19280026C09A /* PeopleListViewModelFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewModelFilterTests.swift; sourceTree = "<group>"; };
-		ACA0517423BF329E0026C09A /* People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACA0519A23BF36F30026C09A /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACB236F823AEFAC800248DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACB236FA23AEFAC800248DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACBBC09A23BF51DF0041761A /* Rooms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rooms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACBBC0A623BF56EE0041761A /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACBBC0A823BF56EE0041761A /* People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACBBC0AA23BF56EE0041761A /* Rooms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rooms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBBC0BA23BF621A0041761A /* People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBBC0BC23BF62250041761A /* Rooms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rooms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBBC0BF23BFA5450041761A /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBBC0C123BFA57A0041761A /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBBC0C423BFA57F0041761A /* People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACBBC0C723BFA5860041761A /* Rooms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Rooms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE54B8A23B4FDD30031AB39 /* DirectoryTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,9 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACBBC0AB23BF56EE0041761A /* Rooms.framework in Frameworks */,
-				ACBBC0A723BF56EE0041761A /* Common.framework in Frameworks */,
-				ACBBC0A923BF56EE0041761A /* People.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACBBC09B23BF51DF0041761A /* Rooms.framework in Frameworks */,
-				ACA0517523BF329E0026C09A /* People.framework in Frameworks */,
-				AC5322D023BF3A7D008A1F82 /* Common.framework in Frameworks */,
+				ACBBC0C823BFA5860041761A /* Rooms.framework in Frameworks */,
+				ACBBC0C223BFA57A0041761A /* Common.framework in Frameworks */,
+				ACBBC0C523BFA57F0041761A /* People.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,12 +149,12 @@
 		ACA0517323BF329E0026C09A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ACBBC0A623BF56EE0041761A /* Common.framework */,
-				ACBBC0A823BF56EE0041761A /* People.framework */,
-				ACBBC0AA23BF56EE0041761A /* Rooms.framework */,
-				ACBBC09A23BF51DF0041761A /* Rooms.framework */,
-				ACA0519A23BF36F30026C09A /* Common.framework */,
-				ACA0517423BF329E0026C09A /* People.framework */,
+				ACBBC0C723BFA5860041761A /* Rooms.framework */,
+				ACBBC0C423BFA57F0041761A /* People.framework */,
+				ACBBC0C123BFA57A0041761A /* Common.framework */,
+				ACBBC0BF23BFA5450041761A /* Common.framework */,
+				ACBBC0BC23BF62250041761A /* Rooms.framework */,
+				ACBBC0BA23BF621A0041761A /* People.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -225,7 +219,7 @@
 				ACB236E523AEFAC400248DEC /* Sources */,
 				ACB236E623AEFAC400248DEC /* Frameworks */,
 				ACB236E723AEFAC400248DEC /* Resources */,
-				ACA0517723BF329E0026C09A /* Embed Frameworks */,
+				ACBBC0B323BF5F880041761A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

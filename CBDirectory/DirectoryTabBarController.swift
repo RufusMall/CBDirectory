@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import Common
+import People
+import Rooms
 
 class DirectoryTabBarController: UITabBarController {
     override func viewDidLoad() {

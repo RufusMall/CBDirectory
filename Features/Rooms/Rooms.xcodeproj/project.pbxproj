@@ -12,7 +12,23 @@
 		ACBBC0A323BF523F0041761A /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBC09E23BF523F0041761A /* RoomListViewController.swift */; };
 		ACBBC0A423BF523F0041761A /* RoomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBC0A023BF523F0041761A /* RoomCellViewModel.swift */; };
 		ACBBC0A523BF523F0041761A /* RoomListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBBC0A123BF523F0041761A /* RoomListViewModel.swift */; };
+		ACBBC0CC23BFA5A20041761A /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0CB23BFA5A20041761A /* Common.framework */; };
+		ACBBC0CD23BFA5A20041761A /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ACBBC0CB23BFA5A20041761A /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ACBBC0CE23BFA5A20041761A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ACBBC0CD23BFA5A20041761A /* Common.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ACBBC08923BF51280041761A /* Rooms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Rooms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		ACBBC09E23BF523F0041761A /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		ACBBC0A023BF523F0041761A /* RoomCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomCellViewModel.swift; sourceTree = "<group>"; };
 		ACBBC0A123BF523F0041761A /* RoomListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewModel.swift; sourceTree = "<group>"; };
+		ACBBC0CB23BFA5A20041761A /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBBC0CC23BFA5A20041761A /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +61,7 @@
 				ACBBC09F23BF523F0041761A /* ViewModel */,
 				ACBBC08B23BF51280041761A /* Rooms */,
 				ACBBC08A23BF51280041761A /* Products */,
+				ACBBC0CA23BFA5A20041761A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +91,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		ACBBC0CA23BFA5A20041761A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACBBC0CB23BFA5A20041761A /* Common.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,6 +121,7 @@
 				ACBBC08523BF51280041761A /* Sources */,
 				ACBBC08623BF51280041761A /* Frameworks */,
 				ACBBC08723BF51280041761A /* Resources */,
+				ACBBC0CE23BFA5A20041761A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
