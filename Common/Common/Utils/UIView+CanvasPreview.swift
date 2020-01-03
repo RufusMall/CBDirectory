@@ -25,12 +25,12 @@ public struct ViewControllerContainerView : UIViewControllerRepresentable {
     }
 }
 
-public class ViewControllerPreviewProvider<T: UIViewController> {
-    static var previews: some View {
+open class ViewControllerPreviewProvider<T: UIViewController> {
+   public static var previews: some View {
         return ViewControllerContainerView(viewController: makeController()).edgesIgnoringSafeArea(.all)
     }
     
-    class func makeController() -> UIViewController {
+    open class func makeController() -> UIViewController {
         return T()
     }
 }

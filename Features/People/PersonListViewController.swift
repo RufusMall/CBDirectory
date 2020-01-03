@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Common
 
-class PersonListViewController: UIViewController {
+public class PersonListViewController: UIViewController {
     var viewModel: PersonListViewModel!
     var personService: PersonServiceProtocol!
     
-    init(personService: PersonServiceProtocol) {
+    public init(personService: PersonServiceProtocol) {
         super.init(nibName: nil, bundle: nil)
         self.tabBarItem = UITabBarItem(title: "People", systemName: "person")
         self.personService = personService
@@ -50,7 +51,7 @@ class PersonListViewController: UIViewController {
         return label
     }()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(tableView)
@@ -96,11 +97,11 @@ class PersonListViewController: UIViewController {
 
 extension PersonListViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.state.people.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let personVM = viewModel.state.people[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.cellID, for: indexPath) as! PersonCell
         cell.viewModel = personVM
@@ -109,7 +110,7 @@ extension PersonListViewController: UITableViewDataSource {
 }
 
 extension PersonListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //move this out to somewhere else, coordinator?
         let personVM = viewModel.state.people[indexPath.row]
         let vc = PersonDetailsViewController(personID: personVM.state.id, personService: personService)
@@ -118,14 +119,15 @@ extension PersonListViewController: UITableViewDelegate {
 }
 
 extension PersonListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         viewModel.searchFilter = searchController.searchBar.text
     }
 }
 
 import SwiftUI
-class PersonListPreview: DirectoryTabControllerPreview {
+class PersonListPreview: ViewControllerPreviewProvider<PersonListViewController> {
+    
 }
 
-class PersonListControllerPreview: DirectoryTabControllerPreview, PreviewProvider {
+class PersonListControllerPreview: PersonListPreview, PreviewProvider {
 }

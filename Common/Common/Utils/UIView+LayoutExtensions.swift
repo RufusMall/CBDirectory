@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 extension UIView {
-    func constrainPinningEdgesToSuperview(constant: CGFloat = 0) {
+    public func constrainPinningEdgesToSuperview(constant: CGFloat = 0) {
         guard let superview = self.superview  else {
             fatalError("constrainPinningEdgesToSuperview requires a valid superview")
         }
         constrainPinningEdges(to: superview, constant: constant)
     }
     
-    func constrainPinningEdges(to view: UIView, constant: CGFloat = 0) {
+    public func constrainPinningEdges(to view: UIView, constant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
         leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:constant).isActive = true
         trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-constant).isActive = true
@@ -25,7 +25,7 @@ extension UIView {
         bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-constant).isActive = true
     }
     
-    func constrainPinningEdgesToSuperviewMargins(constant: CGFloat = 0) {
+    public func constrainPinningEdgesToSuperviewMargins(constant: CGFloat = 0) {
         guard let superview = self.superview  else {
             fatalError("constrainPinningEdgesToSuperview requires a valid superview")
         }

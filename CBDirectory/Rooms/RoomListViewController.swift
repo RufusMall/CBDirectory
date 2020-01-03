@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Common
 
 class RoomListViewController: UIViewController {
     var viewModel: RoomListViewModel!
@@ -94,7 +95,9 @@ extension RoomListViewController: UITableViewDataSource {
 }
 
 import SwiftUI
+
 class RoomListPreview: ViewControllerPreviewProvider<RoomListViewController>, PreviewProvider {
+    
     override class func makeController() -> UIViewController {
         let roomListController = RoomListViewController(roomService: MockRoomService())
         let navController = UINavigationController(rootViewController: roomListController)

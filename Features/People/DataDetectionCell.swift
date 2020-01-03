@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Common
 
 /// Cell that supports detection of data such as phone numbers, emails etc. See: UIDataDetectorTypes
 class DataDetectorCell: UITableViewCell {

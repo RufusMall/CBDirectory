@@ -31,14 +31,13 @@ public class MockPersonService: BaseMockService, PersonServiceProtocol {
     }
 }
 
-
 public class MockPersonFileSystemService: BaseMockService, PersonServiceProtocol {
     let people: [Person]
     let personDetails: [PersonDetails]
     let delay = 0.8
     
-    init() {
-        let personTestData = try! Data(contentsOf: Bundle.main.url(forResource: "people", withExtension: "json")!)
+    public init() {
+        let personTestData = try! Data(contentsOf: Bundle(for: MockPersonFileSystemService.self).url(forResource: "people", withExtension: "json")!)
         let jsonDecoder = JSONDecoder()
         people = try! jsonDecoder.decode([Person].self, from: personTestData)
         personDetails = try! jsonDecoder.decode([PersonDetails].self, from: personTestData)

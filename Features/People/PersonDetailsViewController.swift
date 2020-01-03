@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Common
 
 public class PersonDetailsViewController: UIViewController {
     var personDetailsViewModel: PersonDetailsViewModel!

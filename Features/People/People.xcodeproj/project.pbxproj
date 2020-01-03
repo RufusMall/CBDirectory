@@ -7,10 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC5322DD23BF45D9008A1F82 /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322D223BF45D9008A1F82 /* PersonCell.swift */; };
+		AC5322E023BF45D9008A1F82 /* PersonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322D723BF45D9008A1F82 /* PersonCellViewModel.swift */; };
+		AC5322E123BF45D9008A1F82 /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322D823BF45D9008A1F82 /* PersonListViewModel.swift */; };
+		AC5322E223BF45D9008A1F82 /* PersonDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322D923BF45D9008A1F82 /* PersonDetailsViewModel.swift */; };
+		AC5322E323BF45D9008A1F82 /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322DA23BF45D9008A1F82 /* PersonDetailsViewController.swift */; };
+		AC5322E423BF45D9008A1F82 /* DataDetectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322DB23BF45D9008A1F82 /* DataDetectionCell.swift */; };
+		AC5322E523BF45D9008A1F82 /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322DC23BF45D9008A1F82 /* PersonListViewController.swift */; };
+		AC5322E823BF4604008A1F82 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC5322E723BF4604008A1F82 /* Common.framework */; };
 		ACA0516D23BF32730026C09A /* People.h in Headers */ = {isa = PBXBuildFile; fileRef = ACA0516B23BF32730026C09A /* People.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC5322D223BF45D9008A1F82 /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = SOURCE_ROOT; };
+		AC5322D723BF45D9008A1F82 /* PersonCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCellViewModel.swift; sourceTree = "<group>"; };
+		AC5322D823BF45D9008A1F82 /* PersonListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
+		AC5322D923BF45D9008A1F82 /* PersonDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewModel.swift; sourceTree = "<group>"; };
+		AC5322DA23BF45D9008A1F82 /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		AC5322DB23BF45D9008A1F82 /* DataDetectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetectionCell.swift; sourceTree = SOURCE_ROOT; };
+		AC5322DC23BF45D9008A1F82 /* PersonListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = SOURCE_ROOT; };
+		AC5322E723BF4604008A1F82 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA0516823BF32730026C09A /* People.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = People.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA0516B23BF32730026C09A /* People.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
 		ACA0516C23BF32730026C09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -21,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5322E823BF4604008A1F82 /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC5322D623BF45D9008A1F82 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AC5322D723BF45D9008A1F82 /* PersonCellViewModel.swift */,
+				AC5322D823BF45D9008A1F82 /* PersonListViewModel.swift */,
+				AC5322D923BF45D9008A1F82 /* PersonDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = SOURCE_ROOT;
+		};
+		AC5322E623BF4604008A1F82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC5322E723BF4604008A1F82 /* Common.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACA0515E23BF32730026C09A = {
 			isa = PBXGroup;
 			children = (
 				ACA0516A23BF32730026C09A /* People */,
 				ACA0516923BF32730026C09A /* Products */,
+				AC5322E623BF4604008A1F82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,6 +82,11 @@
 		ACA0516A23BF32730026C09A /* People */ = {
 			isa = PBXGroup;
 			children = (
+				AC5322DB23BF45D9008A1F82 /* DataDetectionCell.swift */,
+				AC5322D223BF45D9008A1F82 /* PersonCell.swift */,
+				AC5322DA23BF45D9008A1F82 /* PersonDetailsViewController.swift */,
+				AC5322DC23BF45D9008A1F82 /* PersonListViewController.swift */,
+				AC5322D623BF45D9008A1F82 /* ViewModel */,
 				ACA0516B23BF32730026C09A /* People.h */,
 				ACA0516C23BF32730026C09A /* Info.plist */,
 			);
@@ -132,6 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5322E223BF45D9008A1F82 /* PersonDetailsViewModel.swift in Sources */,
+				AC5322E123BF45D9008A1F82 /* PersonListViewModel.swift in Sources */,
+				AC5322E423BF45D9008A1F82 /* DataDetectionCell.swift in Sources */,
+				AC5322DD23BF45D9008A1F82 /* PersonCell.swift in Sources */,
+				AC5322E523BF45D9008A1F82 /* PersonListViewController.swift in Sources */,
+				AC5322E023BF45D9008A1F82 /* PersonCellViewModel.swift in Sources */,
+				AC5322E323BF45D9008A1F82 /* PersonDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

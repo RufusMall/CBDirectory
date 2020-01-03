@@ -11,6 +11,20 @@
 		AC5322CD23BF395E008A1F82 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322C923BF395D008A1F82 /* BaseViewModel.swift */; platformFilter = ios; };
 		AC5322CE23BF395E008A1F82 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322CA23BF395E008A1F82 /* DefaultTheme.swift */; platformFilter = ios; };
 		AC5322CF23BF395E008A1F82 /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322CC23BF395E008A1F82 /* Searchable.swift */; platformFilter = ios; };
+		AC5322F623BF495D008A1F82 /* people.json in Resources */ = {isa = PBXBuildFile; fileRef = AC5322EC23BF495D008A1F82 /* people.json */; };
+		AC5322F723BF495D008A1F82 /* MockRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322ED23BF495D008A1F82 /* MockRoomService.swift */; };
+		AC5322F823BF495D008A1F82 /* MockPersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322EE23BF495D008A1F82 /* MockPersonService.swift */; };
+		AC5322F923BF495D008A1F82 /* BaseMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322EF23BF495D008A1F82 /* BaseMockService.swift */; };
+		AC5322FA23BF495D008A1F82 /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322F123BF495D008A1F82 /* WebClient.swift */; };
+		AC5322FB23BF495D008A1F82 /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322F323BF495D008A1F82 /* PersonService.swift */; };
+		AC5322FC23BF495D008A1F82 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322F423BF495D008A1F82 /* BaseService.swift */; };
+		AC5322FD23BF495D008A1F82 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322F523BF495D008A1F82 /* RoomService.swift */; };
+		AC53230023BF49D7008A1F82 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5322FF23BF49D7008A1F82 /* Room.swift */; };
+		AC53230923BF4A46008A1F82 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53230623BF4A46008A1F82 /* Person.swift */; };
+		AC53230A23BF4A46008A1F82 /* PersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53230723BF4A46008A1F82 /* PersonDetails.swift */; };
+		AC53230F23BF4AFB008A1F82 /* UITabBarItem+SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53230C23BF4AFB008A1F82 /* UITabBarItem+SFSymbol.swift */; };
+		AC53231023BF4AFB008A1F82 /* UIView+LayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53230D23BF4AFB008A1F82 /* UIView+LayoutExtensions.swift */; };
+		AC53231123BF4AFB008A1F82 /* UIView+CanvasPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53230E23BF4AFB008A1F82 /* UIView+CanvasPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +34,20 @@
 		AC5322C923BF395D008A1F82 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = SOURCE_ROOT; };
 		AC5322CA23BF395E008A1F82 /* DefaultTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = SOURCE_ROOT; };
 		AC5322CC23BF395E008A1F82 /* Searchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		AC5322EC23BF495D008A1F82 /* people.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = people.json; sourceTree = "<group>"; };
+		AC5322ED23BF495D008A1F82 /* MockRoomService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockRoomService.swift; sourceTree = "<group>"; };
+		AC5322EE23BF495D008A1F82 /* MockPersonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockPersonService.swift; sourceTree = "<group>"; };
+		AC5322EF23BF495D008A1F82 /* BaseMockService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMockService.swift; sourceTree = "<group>"; };
+		AC5322F123BF495D008A1F82 /* WebClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebClient.swift; sourceTree = "<group>"; };
+		AC5322F323BF495D008A1F82 /* PersonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		AC5322F423BF495D008A1F82 /* BaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		AC5322F523BF495D008A1F82 /* RoomService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
+		AC5322FF23BF49D7008A1F82 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		AC53230623BF4A46008A1F82 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		AC53230723BF4A46008A1F82 /* PersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetails.swift; sourceTree = "<group>"; };
+		AC53230C23BF4AFB008A1F82 /* UITabBarItem+SFSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+SFSymbol.swift"; sourceTree = "<group>"; };
+		AC53230D23BF4AFB008A1F82 /* UIView+LayoutExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayoutExtensions.swift"; sourceTree = "<group>"; };
+		AC53230E23BF4AFB008A1F82 /* UIView+CanvasPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+CanvasPreview.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +64,7 @@
 		AC5322B423BF3859008A1F82 = {
 			isa = PBXGroup;
 			children = (
+				AC5322E923BF495D008A1F82 /* CBDirectoryAPI */,
 				AC5322C023BF3859008A1F82 /* Common */,
 				AC5322BF23BF3859008A1F82 /* Products */,
 			);
@@ -52,6 +81,7 @@
 		AC5322C023BF3859008A1F82 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AC53230B23BF4AFB008A1F82 /* Utils */,
 				AC5322C923BF395D008A1F82 /* BaseViewModel.swift */,
 				AC5322CA23BF395E008A1F82 /* DefaultTheme.swift */,
 				AC5322CB23BF395E008A1F82 /* Search */,
@@ -67,6 +97,74 @@
 				AC5322CC23BF395E008A1F82 /* Searchable.swift */,
 			);
 			path = Search;
+			sourceTree = SOURCE_ROOT;
+		};
+		AC5322E923BF495D008A1F82 /* CBDirectoryAPI */ = {
+			isa = PBXGroup;
+			children = (
+				AC5322EA23BF495D008A1F82 /* Mock */,
+				AC5322F023BF495D008A1F82 /* Network */,
+				AC5322F223BF495D008A1F82 /* API */,
+			);
+			path = CBDirectoryAPI;
+			sourceTree = "<group>";
+		};
+		AC5322EA23BF495D008A1F82 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				AC5322EB23BF495D008A1F82 /* testData */,
+				AC5322ED23BF495D008A1F82 /* MockRoomService.swift */,
+				AC5322EE23BF495D008A1F82 /* MockPersonService.swift */,
+				AC5322EF23BF495D008A1F82 /* BaseMockService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		AC5322EB23BF495D008A1F82 /* testData */ = {
+			isa = PBXGroup;
+			children = (
+				AC5322EC23BF495D008A1F82 /* people.json */,
+			);
+			path = testData;
+			sourceTree = "<group>";
+		};
+		AC5322F023BF495D008A1F82 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AC5322F123BF495D008A1F82 /* WebClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AC5322F223BF495D008A1F82 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AC5322FE23BF49AE008A1F82 /* Model */,
+				AC5322F323BF495D008A1F82 /* PersonService.swift */,
+				AC5322F423BF495D008A1F82 /* BaseService.swift */,
+				AC5322F523BF495D008A1F82 /* RoomService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AC5322FE23BF49AE008A1F82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC53230623BF4A46008A1F82 /* Person.swift */,
+				AC53230723BF4A46008A1F82 /* PersonDetails.swift */,
+				AC5322FF23BF49D7008A1F82 /* Room.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AC53230B23BF4AFB008A1F82 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC53230C23BF4AFB008A1F82 /* UITabBarItem+SFSymbol.swift */,
+				AC53230D23BF4AFB008A1F82 /* UIView+LayoutExtensions.swift */,
+				AC53230E23BF4AFB008A1F82 /* UIView+CanvasPreview.swift */,
+			);
+			path = Utils;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -139,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5322F623BF495D008A1F82 /* people.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +248,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5322F823BF495D008A1F82 /* MockPersonService.swift in Sources */,
+				AC53230F23BF4AFB008A1F82 /* UITabBarItem+SFSymbol.swift in Sources */,
+				AC53230A23BF4A46008A1F82 /* PersonDetails.swift in Sources */,
+				AC5322F723BF495D008A1F82 /* MockRoomService.swift in Sources */,
 				AC5322CD23BF395E008A1F82 /* BaseViewModel.swift in Sources */,
 				AC5322CF23BF395E008A1F82 /* Searchable.swift in Sources */,
+				AC5322FD23BF495D008A1F82 /* RoomService.swift in Sources */,
+				AC53231123BF4AFB008A1F82 /* UIView+CanvasPreview.swift in Sources */,
+				AC5322FA23BF495D008A1F82 /* WebClient.swift in Sources */,
+				AC5322F923BF495D008A1F82 /* BaseMockService.swift in Sources */,
+				AC53231023BF4AFB008A1F82 /* UIView+LayoutExtensions.swift in Sources */,
+				AC5322FB23BF495D008A1F82 /* PersonService.swift in Sources */,
 				AC5322CE23BF395E008A1F82 /* DefaultTheme.swift in Sources */,
+				AC53230923BF4A46008A1F82 /* Person.swift in Sources */,
+				AC5322FC23BF495D008A1F82 /* BaseService.swift in Sources */,
+				AC53230023BF49D7008A1F82 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
