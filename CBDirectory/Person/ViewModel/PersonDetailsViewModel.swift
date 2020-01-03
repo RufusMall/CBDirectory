@@ -14,34 +14,31 @@ public struct DataItemCellViewModel {
     let content: String
 }
 
-public class PersonDetailsViewModel {
+public struct PersonDetailsViewState: CreateDefault {
+    public typealias ViewState = PersonDetailsViewState
+    
+    public static func `default`() -> ViewState {
+        return PersonDetailsViewState(title: "Loading...", dataItems: [])
+    }
+    
+    public var title: String
+    public var errorMessage: String?
+    public var avatar: UIImage?
+    public var dataItems: [DataItemCellViewModel]
+}
+
+public class PersonDetailsViewModel: ViewModel<PersonDetailsViewState> {
     private var personService: PersonServiceProtocol
     private var selectedPersonID: String
     
-    public struct State {
-        public var title: String
-        public var errorMessage: String?
-        public var avatar: UIImage?
-        public var dataItems: [DataItemCellViewModel]
-    }
-    
-    private let stateChanged: (State)->()
-    
-    var state: State {
-        didSet {
-            self.stateChanged(state)
-        }
-    }
-    
-    public init(personService: PersonServiceProtocol, personID: String, stateChanged: @escaping (State)->()) {
-        self.stateChanged = stateChanged
+    public init(personService: PersonServiceProtocol, personID: String, stateChanged: ((PersonDetailsViewState)->())? = nil) {
         self.personService = personService
         self.selectedPersonID = personID
-        self.state = State(title: "Loading...", dataItems: [])
+        super.init(stateChanged: stateChanged)
     }
     
-    public func start() {
-        self.stateChanged(state)
+    public override func start() {
+        super.start()
         self.personService.fetchPerson(id: selectedPersonID) { (result) in
             DispatchQueue.main.async {
                 switch result {
@@ -53,7 +50,7 @@ public class PersonDetailsViewModel {
                                      DataItemCellViewModel(title: "job title:", content: personDetails.jobTitle)]
                     
                     let title = "\(personDetails.firstName) \(personDetails.lastName)"
-                    self.state = State(title: title, errorMessage: self.state.errorMessage, avatar: self.state.avatar, dataItems: dataItems)
+                    self.state = PersonDetailsViewState(title: title, errorMessage: self.state.errorMessage, avatar: self.state.avatar, dataItems: dataItems)
                     
                     if let avatarURL = URL(string: personDetails.avatar) {
                         WebClient.shared.get(url: avatarURL) { (result) in
@@ -70,10 +67,10 @@ public class PersonDetailsViewModel {
                             }
                         }
                     }
-                   
+                    
                 case .failure(let error):
                     let state = self.state
-                    self.state = State(title: "Load Failed", errorMessage: error.localizedDescription, avatar: state.avatar, dataItems: state.dataItems)
+                    self.state = PersonDetailsViewState(title: "Load Failed", errorMessage: error.localizedDescription, avatar: state.avatar, dataItems: state.dataItems)
                 }
             }
         }

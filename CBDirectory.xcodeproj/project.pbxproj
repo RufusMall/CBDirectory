@@ -30,6 +30,9 @@
 		ACA0514923BCF0DA0026C09A /* MockRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514823BCF0DA0026C09A /* MockRoomService.swift */; };
 		ACA0514B23BCF2260026C09A /* BaseMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514A23BCF2260026C09A /* BaseMockService.swift */; };
 		ACA0514D23BD15F20026C09A /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0514C23BD15F20026C09A /* RoomCell.swift */; };
+		ACA0515123BD57ED0026C09A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515023BD57ED0026C09A /* BaseViewModel.swift */; };
+		ACA0515223BD59C80026C09A /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515023BD57ED0026C09A /* BaseViewModel.swift */; };
+		ACA0515423BE9CBC0026C09A /* ViewModelViewStateGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */; };
 		ACB236ED23AEFAC400248DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB236EC23AEFAC400248DEC /* AppDelegate.swift */; };
 		ACB236F623AEFAC800248DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F523AEFAC800248DEC /* Assets.xcassets */; };
 		ACB236F923AEFAC800248DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB236F723AEFAC800248DEC /* LaunchScreen.storyboard */; };
@@ -80,6 +83,8 @@
 		ACA0514823BCF0DA0026C09A /* MockRoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRoomService.swift; sourceTree = "<group>"; };
 		ACA0514A23BCF2260026C09A /* BaseMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMockService.swift; sourceTree = "<group>"; };
 		ACA0514C23BD15F20026C09A /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
+		ACA0515023BD57ED0026C09A /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelViewStateGenerator.swift; sourceTree = "<group>"; };
 		ACB236E923AEFAC400248DEC /* CBDirectory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBDirectory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB236EC23AEFAC400248DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB236F523AEFAC800248DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,8 +130,9 @@
 		AC750F6923BA66910006876E /* CBDirectoryTests */ = {
 			isa = PBXGroup;
 			children = (
-				ACA0514423BCEED40026C09A /* Rooms */,
 				ACA0513323BC37110026C09A /* TestCase+ExpectionExtension.swift */,
+				ACA0515323BE9CBC0026C09A /* ViewModelViewStateGenerator.swift */,
+				ACA0514423BCEED40026C09A /* Rooms */,
 				AC750F7523BA694D0006876E /* Person */,
 				AC750F6C23BA66920006876E /* Info.plist */,
 			);
@@ -165,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA0513823BCE4680026C09A /* DefaultTheme.swift */,
+				ACA0515023BD57ED0026C09A /* BaseViewModel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -417,6 +424,8 @@
 				ACA0514723BCEF010026C09A /* RoomListViewModelTests.swift in Sources */,
 				AC750F8423BABF2F0006876E /* PersonDetailsViewModelTests.swift in Sources */,
 				AC750F7823BA69770006876E /* PersonListViewModelTests.swift in Sources */,
+				ACA0515423BE9CBC0026C09A /* ViewModelViewStateGenerator.swift in Sources */,
+				ACA0515223BD59C80026C09A /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +450,7 @@
 				ACB2370323AEFB4B00248DEC /* UIView+LayoutExtensions.swift in Sources */,
 				ACB2371423B2983100248DEC /* PersonListViewModel.swift in Sources */,
 				ACA0514D23BD15F20026C09A /* RoomCell.swift in Sources */,
+				ACA0515123BD57ED0026C09A /* BaseViewModel.swift in Sources */,
 				ACA0514B23BCF2260026C09A /* BaseMockService.swift in Sources */,
 				ACB2370B23AF01AC00248DEC /* RoomListViewController.swift in Sources */,
 				ACA0513223BC35E70026C09A /* PersonDetails.swift in Sources */,

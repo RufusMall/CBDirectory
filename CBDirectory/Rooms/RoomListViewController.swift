@@ -17,7 +17,7 @@ class RoomListViewController: UIViewController {
            return refreshControl
        }()
     
-    fileprivate func handleErrorMessages(_ state: RoomListViewModel.State) {
+    fileprivate func handleErrorMessages(_ state: RoomListViewState) {
         if let errorMsg = state.errorMessage {
             let errorLabel = UILabel()
             errorLabel.text = errorMsg

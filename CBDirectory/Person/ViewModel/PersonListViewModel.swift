@@ -8,29 +8,28 @@
 
 import Foundation
 
-public class PersonListViewModel {
-    public struct State {
-        public let title = "People"
-        public var errorMessage: String?
-        public var people = [PersonCellViewModel]()
+public struct PersonListViewState: CreateDefault {
+    public typealias ViewState = PersonListViewState
+    
+    public static func `default`() -> PersonListViewState {
+        return ViewState()
     }
     
+    public let title = "People"
+    public var errorMessage: String?
+    public var people = [PersonCellViewModel]()
+}
+
+public class PersonListViewModel: ViewModel<PersonListViewState> {
     private let service: PersonServiceProtocol
-    private let stateChanged: (State)->()
     
-    public var state = State() {
-        didSet {
-            self.stateChanged(state)
-        }
-    }
-    
-    public init(service: PersonServiceProtocol, stateChanged:@escaping (State)->()) {
-        self.stateChanged = stateChanged
+    public init(service: PersonServiceProtocol, stateChanged: ((PersonListViewState)->())? = nil) {
         self.service = service
+        super.init(stateChanged: stateChanged)
     }
     
-    public func start() {
-        self.stateChanged(state)
+    public override func start() {
+        super.start()
         fetchPeople()
     }
     
@@ -51,10 +50,10 @@ public class PersonListViewModel {
                         return p1.state.lastName < p2.state.lastName
                     }
                     
-                    self.state = State(errorMessage: nil, people: sortedViewModels)
+                    self.state = PersonListViewState(errorMessage: nil, people: sortedViewModels)
                 case .failure(let error):
                     //continue to show old people. Should really improve this so we show some sort of error + existing fetched people
-                    self.state = State(errorMessage: error.localizedDescription, people: self.state.people)
+                    self.state = PersonListViewState(errorMessage: error.localizedDescription, people: self.state.people)
                     print(error.localizedDescription)
                 }
             }

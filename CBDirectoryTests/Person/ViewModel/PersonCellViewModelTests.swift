@@ -9,6 +9,8 @@
 import XCTest
 @testable import CBDirectory
 
+extension PersonCellViewModel: ViewModelProtocol {}
+
 class PersonCellViewModelTests: XCTestCase {
     
     let testPersonInvalidImgURL = Person(id: "id", createdAt: "", avatar: "avatarURL", jobTitle: "jobTitle", phone: "01698386326", favouriteColor: "color", email: "Mike@email.com", firstName: "Mike", lastName: "Anderson")
@@ -16,56 +18,39 @@ class PersonCellViewModelTests: XCTestCase {
     let testPersonValidImgURL = Person(id: "id", createdAt: "", avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/lingeswaran/128.jpg", jobTitle: "jobTitle", phone: "01698386326", favouriteColor: "color", email: "Mike@email.com", firstName: "Mike", lastName: "Anderson")
     
     func test_flowInvalidImageURL() {
-        var viewState = [PersonCellViewModel.State]()
         
-        let expectation = self.expectation(description: "")
+        let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 1
         
         let testPerson = testPersonInvalidImgURL
         let viewModel = PersonCellViewModel(person: testPerson)
+        let stateTracker = ViewModelViewStateGenerator(viewModel:viewModel)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation)
         
-        viewModel.stateChanged = { state in
-            viewState.append(state)
-            expectation.fulfill()
-        }
-        
-        viewModel.start()
-        
-        waitForExpectations(timeout: 2.0, handler: nil)
-        
-        let initialState = viewState[0]
+        let initialState = viewStates[0]
         assert(state: initialState, isConfiguredFor: testPerson, usingImage: PersonCellViewModel.placeholderImage)
     }
     
     func test_flowValidImageURL() {
         
-        var viewState = [PersonCellViewModel.State]()
-        
-        let expectation = self.expectation(description: "")
+        let expectation = self.expectation()
         expectation.expectedFulfillmentCount = 2
         
         let testPerson = testPersonValidImgURL
         let viewModel = PersonCellViewModel(person: testPerson)
+        let stateTracker = ViewModelViewStateGenerator(viewModel:viewModel)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation)
         
-        viewModel.stateChanged = { state in
-            viewState.append(state)
-            expectation.fulfill()
-        }
-        
-        viewModel.start()
-        
-        waitForExpectations(timeout: 10.0, handler: nil)
-        
-        let initialState = viewState[0]
+        let initialState = viewStates[0]
         assert(state: initialState, isConfiguredFor: testPerson, usingImage: PersonCellViewModel.placeholderImage)
         
-        let imageFetchComplete = viewState[1]
+        let imageFetchComplete = viewStates[1]
         XCTAssertNotEqual(imageFetchComplete.avatar, PersonCellViewModel.placeholderImage)
         XCTAssertEqual(imageFetchComplete.firstName, testPersonInvalidImgURL.firstName)
         XCTAssertEqual(imageFetchComplete.lastName, testPersonInvalidImgURL.lastName)
     }
     
-    func assert(state:PersonCellViewModel.State, isConfiguredFor person: Person, usingImage image: UIImage) {
+    func assert(state:PersonCellViewState, isConfiguredFor person: Person, usingImage image: UIImage) {
         XCTAssertEqual(state.avatar, image)
         XCTAssertEqual(state.firstName, testPersonInvalidImgURL.firstName)
         XCTAssertEqual(state.lastName, testPersonInvalidImgURL.lastName)
