@@ -10,7 +10,7 @@ import Foundation
 
 public protocol CreateDefault {
     associatedtype ViewState
-    static func `default`() -> ViewState
+    static func `default`() -> Self
 }
 
 public protocol ViewModelProtocol {
@@ -18,7 +18,6 @@ public protocol ViewModelProtocol {
     
     typealias ViewStateChanged = (ViewState)->()
     var stateChanged: ViewStateChanged? { get set }
-
     func start()
 }
 
@@ -28,7 +27,7 @@ open class ViewModel<TViewState: CreateDefault>: ViewModelProtocol {
     
     public init(stateChanged: ViewStateChanged? = nil) {
         self.stateChanged = stateChanged
-        state = TViewState.default() as! TViewState
+        state = TViewState.default()
     }
     
     public var state: TViewState {

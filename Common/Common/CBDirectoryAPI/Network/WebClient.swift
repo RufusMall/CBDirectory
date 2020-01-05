@@ -21,7 +21,7 @@ public class WebClient {
     
     let session: URLSession
     
-    init(session: URLSession) {
+    public init(session: URLSession) {
         self.session = session
     }
     

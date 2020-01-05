@@ -24,12 +24,4 @@ extension UIView {
         topAnchor.constraint(equalTo: view.topAnchor, constant:constant).isActive = true
         bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-constant).isActive = true
     }
-    
-    public func constrainPinningEdgesToSuperviewMargins(constant: CGFloat = 0) {
-        guard let superview = self.superview  else {
-            fatalError("constrainPinningEdgesToSuperview requires a valid superview")
-        }
-        
-        constrainPinningEdges(to: superview)
-    }
 }
