@@ -39,7 +39,9 @@ class PersonCellViewModelTests: XCTestCase {
         let testPerson = testPersonValidImgURL
         let viewModel = PersonCellViewModel(person: testPerson)
         let stateTracker = ViewModelViewStateGenerator(viewModel:viewModel)
-        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation)
+        let viewStates = stateTracker.waitForViewStateFulfilling(expectation: expectation) {
+            viewModel.start(cellUpdateID: UUID())
+        }
         
         let initialState = viewStates[0]
         assert(state: initialState, isConfiguredFor: testPerson, usingImage: PersonCellViewModel.placeholderImage)
