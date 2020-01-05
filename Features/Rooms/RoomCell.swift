@@ -34,13 +34,13 @@ class RoomCell: UITableViewCell {
         }
     }
     
-    var textStack: UIStackView!
+    var textStack: UIStackView
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        textStack = UIStackView(arrangedSubviews: [roomNameLabel, activityStatusLabel])
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
-        textStack = UIStackView(arrangedSubviews: [roomNameLabel, activityStatusLabel])
-        textStack.axis = .horizontal
+        setTestStackAxis()
         textStack.distribution = .fillProportionally
         
         textStack.translatesAutoresizingMaskIntoConstraints = false
@@ -51,9 +51,24 @@ class RoomCell: UITableViewCell {
         let insets = CGFloat(16.0)
         textStack.layoutMargins = .init(top: insets, left: insets, bottom: insets, right: insets)
         textStack.constrainPinningEdgesToSuperview()
+        
+        
+    }
+    
+    func setTestStackAxis() {
+        if traitCollection.preferredContentSizeCategory > .accessibilityLarge {
+            textStack.axis = .vertical
+        }  else {
+            textStack.axis = .horizontal
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setTestStackAxis()
     }
 }
