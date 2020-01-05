@@ -41,6 +41,7 @@ public class PersonListViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         let viewToHideCellSeperatorsWhenTableIsEmpty = UIView()
         tableView.tableFooterView = viewToHideCellSeperatorsWhenTableIsEmpty
+        tableView.keyboardDismissMode = .onDrag
         return tableView
     }()
     
@@ -104,11 +105,16 @@ extension PersonListViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let personVM = viewModel.state.people[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.cellID, for: indexPath) as! PersonCell
+       
+        let cellUpdateID = UUID()
         cell.viewModel = personVM
+        cell.cellUpdateID = cellUpdateID
+        cell.viewModel?.start(cellUpdateID: cellUpdateID)
+        
         return cell
     }
 }
-
+ 
 extension PersonListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //move this out to somewhere else, coordinator?

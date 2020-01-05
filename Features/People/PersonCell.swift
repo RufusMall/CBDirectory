@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Common
 
 class PersonCell: UITableViewCell {
     static let cellID = "PersonCell"
@@ -32,28 +33,30 @@ class PersonCell: UITableViewCell {
         return label
     }()
     
+    var cellUpdateID: UUID?
+    
     public var viewModel: PersonCellViewModel? {
         didSet {
             guard let vm = viewModel else { return }
             
             vm.stateChanged = { [weak self] state in
-                guard let self = self else { return }
-                
+                guard let self = self, vm.cellUpdateID == self.cellUpdateID  else {
+                    return
+                }
                 self.titleLabel.text = state.firstName
                 self.subtitleLabel.text = state.lastName
                 self.avatarImageView.image = state.avatar
             }
-            
-            vm.start()
         }
     }
     
-    var textStack: UIStackView!
+    var textStack: UIStackView
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
         textStack = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+        
         textStack.axis = .vertical
         textStack.distribution = .fillProportionally
         
@@ -82,12 +85,14 @@ class PersonCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        viewModel?.viewWillBeRecycled()
+        avatarImageView.image = nil
     }
 }
 
 import SwiftUI
 
 class PersonCellPreviewer: PersonListPreview, PreviewProvider {
-    
+    override class func makeController() -> UIViewController {
+        return UINavigationController(rootViewController: PersonListViewController(personService: MockPersonService()))
+    }
 }
