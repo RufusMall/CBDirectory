@@ -8,8 +8,8 @@
 
 import XCTest
 @testable import CBDirectory
-
-extension RoomListViewModel: ViewModelProtocol {}
+import Common
+import Rooms
 
 class RoomListViewModelTests: XCTestCase {
     

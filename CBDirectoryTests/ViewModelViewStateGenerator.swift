@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+import Common
 
 /// This generates an ordered list of ViewState
 class ViewModelViewStateGenerator<TViewModel> where TViewModel : ViewModelProtocol {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import People
+import Common
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
